@@ -96,6 +96,7 @@ const data = [
         nguoidaidien: 'Nguyen Van A',
         lienhe: 'example@gmail.com',
         chitiet: '1000 tấn',
+        tinhtrang: 2,
     },
     {
         key: 2,
@@ -108,6 +109,7 @@ const data = [
         nguoidaidien: 'Nguyen Van A',
         lienhe: 'example@gmail.com',
         chitiet: '1000 tấn',
+        tinhtrang: 3,
     },
 ];
 
@@ -143,7 +145,7 @@ class danhsach extends Component {
                         columns={columns}
                         expandable={{
                             expandedRowRender: record =>
-                                <Subtable columns={sub_columns} data={record} />
+                                <Subtable columns={sub_columns} data={record} renderStep={true}/>
                             ,
                             rowExpandable: record => record.name !== 'Not Expandable',
                         }}

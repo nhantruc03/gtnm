@@ -158,6 +158,7 @@ class YeuCauDoanhNghiep extends Component {
 
                 <div className="site-layout-background" style={{ padding: 24, margin: 30, marginTop: 10, minHeight: 360, borderRadius: '10px' }}>
                     <Table
+                        expandRowByClick={true}
                         columns={columns}
                         expandable={{
                             expandedRowRender: record =>

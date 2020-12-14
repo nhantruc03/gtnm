@@ -1,247 +1,249 @@
 @import '~antd/dist/antd.css';
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+    height: 40vmin;
+    pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 
 /* ant */
+
 #components-layout-demo-side .logo {
-  height: 32px;
-  margin: 16px;
-  background: rgba(255, 255, 255, 0.3);
+    height: 32px;
+    margin: 16px;
+    background: rgba(255, 255, 255, 0.3);
 }
 
 .site-layout .site-layout-background {
-  background: #fff;
+    background: #fff;
 }
 
-.ant-input-group > .ant-input:first-child, .ant-input-group-addon:first-child { 
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
+.ant-input-group>.ant-input:first-child,
+.ant-input-group-addon:first-child {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
 }
 
-.ant-input-search > .ant-input-group > .ant-input-group-addon:last-child .ant-input-search-button {
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
+.ant-input-search>.ant-input-group>.ant-input-group-addon:last-child .ant-input-search-button {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
 }
 
 button.ant-btn.add {
-  border-radius: 6px;
-  background-color: #002B6D;
-  color: white;
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 140%;
-  /* or 22px */
-  height: 40px;
-  text-align: center;
+    border-radius: 6px;
+    background-color: #002B6D;
+    color: white;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+    /* or 22px */
+    height: 40px;
+    text-align: center;
 }
 
 button.ant-btn.back {
-  border-radius: 6px;
-  background-color: #fff;
-  color: #114EAB;
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 140%;
-  /* or 22px */
-  border: 1px solid #002B6D;
-  height: 40px;
-  text-align: center;
+    border-radius: 6px;
+    background-color: #fff;
+    color: #114EAB;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+    /* or 22px */
+    border: 1px solid #002B6D;
+    height: 40px;
+    text-align: center;
 }
 
 h3.ant-typography {
-  font-family: Open Sans;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 140%;
-  text-transform: uppercase;
-  color:#002B6D !important;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #002B6D !important;
 }
 
 h3.ant-typography.logo {
-  color:white !important;
+    color: white !important;
 }
 
-
 span.ant-tag {
-  font-family: Open Sans;
-  font-style: normal;
-  font-weight: normal;
-  font-size: unset;
-  line-height: 140%;
-  border-radius: 16px;
-  border: 0px;
-  padding: 5px 0 5px 0;
-  width: 100%;
-  text-transform: none;
-  white-space: break-spaces;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: unset;
+    line-height: 140%;
+    border-radius: 16px;
+    border: 0px;
+    padding: 5px 0 5px 0;
+    width: 100%;
+    text-transform: none;
+    white-space: break-spaces;
 }
 
 span.ant-tag.yellow {
-  color: #765F01;
-  background: #FFF3C4;
+    color: #765F01;
+    background: #FFF3C4;
 }
+
 span.ant-tag.green {
-  background: #B2F1BD;
-  color: #12541D;
+    background: #B2F1BD;
+    color: #12541D;
 }
+
 span.ant-tag.red {
-  background: #FFDFDD;
-  color: #8E0800;
+    background: #FFDFDD;
+    color: #8E0800;
 }
 
 span.ant-tag.purple {
-  background: #DAD7FE;
+    background: #DAD7FE;
 }
 
 span.ant-tag.skin {
-  background: #FFE5D3;
+    background: #FFE5D3;
 }
 
 span.ant-tag.tea {
-  background: #E2FBD7;
+    background: #E2FBD7;
 }
 
-
 input.ant-input {
-  height: 40px;
-  border-radius: 6px;
+    height: 40px;
+    border-radius: 6px;
 }
 
 .ant-input-number {
-  border-radius: 6px;
-  height: 40px;
+    border-radius: 6px;
+    height: 40px;
 }
 
 textarea.ant-input {
-  border-radius: 6px;
+    border-radius: 6px;
 }
-.ant-upload.ant-upload-drag{
-  border-radius: 6px !important;
+
+.ant-upload.ant-upload-drag {
+    border-radius: 6px !important;
 }
 
 button.ant-btn.ant-btn-icon-only.ant-input-search-button {
-  height: 40px;
+    height: 40px;
 }
 
-
-
 th.ant-table-cell {
-  text-align: center !important;
-  max-width: 20px !important;
+    text-align: center !important;
+    max-width: 20px !important;
 }
 
 td.ant-table-cell {
-  text-align: center !important;
-  max-width: 20px !important;
+    text-align: center !important;
+    max-width: 20px !important;
 }
 
-.invisible{
-  visibility: hidden;
+.invisible {
+    visibility: hidden;
 }
 
 td.ant-table-cell.sub {
-  vertical-align: baseline;
+    vertical-align: baseline;
 }
 
 .ant-table.sub-table {
-  background: none;
+    background: none;
 }
 
 .ant-col.ant-col-6.ant-form-item-label {
-  max-width: 100%;
+    max-width: 100%;
 }
 
 .ant-upload.ant-upload-drag .ant-upload {
-  padding: 5px 0;
+    padding: 5px 0;
 }
 
 .ant-picker {
-  width: 100%;
-  height: 40px;
-  border-radius: 6px;
+    width: 100%;
+    height: 40px;
+    border-radius: 6px;
 }
 
 label.ant-form-item-required {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 140%;
-  color: #333333;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 140%;
+    color: #333333;
 }
 
 label {
-  font-family: Montserrat !important;
-  font-style: normal !important;
-  font-weight: 500 !important;
-  font-size: 14px !important;
-  line-height: 140% !important;
-  color: #333333 !important;
+    font-family: Montserrat !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    line-height: 140% !important;
+    color: #333333 !important;
 }
 
 .ant-picker-content {
-  table-layout: auto !important;
+    table-layout: auto !important;
 }
 
 ul.events {
-  overflow-x: hidden;
-  margin-right: 30px;
+    overflow-x: hidden;
+    margin-right: 30px;
 }
 
 .ant-picker-cell-inner.ant-picker-calendar-date {
-  max-width: 500px;
+    max-width: 500px;
 }
 
 .ant-menu-dark .ant-menu-inline.ant-menu-sub {
-  background: #184A97;
+    background: #184A97;
 }
 
 .site-drawer-render-in-current-wrapper {
-  position: relative;
-  overflow: hidden;
+    position: relative;
+    overflow: hidden;
 }
+
 
 /* input[type='radio']:after {
   width: 15px;
@@ -258,15 +260,45 @@ ul.events {
 } */
 
 input[type='radio']:checked:after {
-  width: 15px;
-  height: 15px;
-  border-radius: 15px;
-  top: -2px;
-  left: -1px;
-  position: relative;
-  background-color: #184A97;
-  content: '';
-  display: inline-block;
-  visibility: visible;
-  border: 2px solid white;
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #184A97;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+
+p.ncc_label {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 10px;
+    color: #828282;
+}
+
+span.ncc_content{
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 100%;
+    color: black;
+}
+
+.ant-drawer-title {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 140%;
+}
+
+h1.ant-typography {
+    font-size: 35px;
 }

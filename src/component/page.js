@@ -15,7 +15,6 @@ class page extends Component {
                     <Layout className="site-layout">
                         <Header />
                         {React.cloneElement(this.props.children, { showDrawer: () => this.showDrawer() })}
-                        <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
                     </Layout>
 
                 </Layout>

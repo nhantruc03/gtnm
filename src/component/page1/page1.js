@@ -7,7 +7,7 @@ class page1 extends Component {
     render() {
         return (
             <Content style={{ margin: '0 16px' }}>
-                <Title style={{ color: '#002140', marginTop: 15 }} level={3}>Yêu cầu phòng ban</Title>
+                {/* <Title style={{ color: '#002140', marginTop: 15 }} level={3}>Yêu cầu phòng ban</Title>
                 <Search/>
                 <div className="site-layout-background" style={{ padding: 24, minHeight: 360 , borderRadius:'10px'}}>
                 <Result
@@ -16,7 +16,7 @@ class page1 extends Component {
                     subTitle="Hiện chưa có yêu cầu nào."
                     extra={<Button type="primary">Back Home</Button>}
                 />,
-                </div>
+                </div> */}
             </Content>
         );
     }

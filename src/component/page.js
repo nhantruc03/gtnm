@@ -3,7 +3,7 @@ import {  Layout } from 'antd';
 import SiderDemo from './sider';
 import Header from './header';
 
-const { Footer } = Layout;
+// const { Footer } = Layout;
 class page extends Component {
    
 

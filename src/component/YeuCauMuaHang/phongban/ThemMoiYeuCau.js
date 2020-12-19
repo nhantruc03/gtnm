@@ -10,8 +10,11 @@ import {
     Col,
     Input,
     DatePicker,
+    message,
 } from 'antd';
 import { InboxOutlined } from '@ant-design/icons';
+import { connect } from 'react-redux';
+import { act_Add_YCMH_PHONGBAN } from '../../../action';
 const formItemLayout = {
     labelCol: {
         span: 6,
@@ -23,7 +26,9 @@ const formItemLayout = {
 
 const normFile = (e) => {
     console.log('Upload event:', e);
-
+    e.fileList.forEach(a=>{
+        console.log(a.uid)
+    })
     if (Array.isArray(e)) {
         return e;
     }
@@ -46,13 +51,37 @@ const validateMessages = {
     },
 };
 const temp = `< Yêu cầu phòng ban`
+const key = 'updatable';
 class ThemMoiYeuCau extends Component {
     goBack = (e) => {
         e.preventDefault();
         this.props.history.goBack();
     }
     onFinish = (values) => {
-        console.log('Received values of form: ', values);
+        var chititet = `${values.soluong} ${values.donvitinh}`;
+
+        var ngaynhanhang = new Date(values.ngaynhanhang.toString()).toLocaleDateString();
+
+        var ngaytao = new Date(values.ngaytao.toString()).toLocaleDateString();
+        values.ngaynhanhang = ngaynhanhang;
+        values.ngaytao = ngaytao;
+
+        var dondathang=[];
+        values.dragger.forEach((e)=>{
+            dondathang.push(e.uid)
+        })
+
+        var data = { ...values, chitiet: chititet, dondathang: dondathang }
+
+        console.log('Received values of form: ', data);
+
+        message.loading({ content: 'Đang thực hiện thao tác...', key });
+        setTimeout(() => {
+            message.success({ content: 'Thêm dữ liệu thành công!', key, duration: 2 });
+            this.props.history.goBack();
+        }, 2000);
+
+        this.props.onAdd(data)
     };
     render() {
         return (
@@ -87,22 +116,22 @@ class ThemMoiYeuCau extends Component {
                                     </Form.Item>
                                 </Form.Item>
                                 <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Email" required>
-                                    <Form.Item name="email" noStyle label="Email" rules={[{ required: true, type:'email' }]}>
+                                    <Form.Item name="email" noStyle label="Email" rules={[{ required: true, type: 'email' }]}>
                                         <Input placeholder="Eg.example@gmail.com" />
                                     </Form.Item>
                                 </Form.Item>
                                 <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="SĐT" required>
-                                    <Form.Item name="sdt" noStyle label="SĐT" rules={[{ required: true, type:'number'}]}>
-                                        <InputNumber style={{width:'100%'}} placeholder="Eg.0919..." />
+                                    <Form.Item name="sdt" noStyle label="SĐT" rules={[{ required: true, type: 'number' }]}>
+                                        <InputNumber style={{ width: '100%' }} placeholder="Eg.0919..." />
                                     </Form.Item>
                                 </Form.Item>
                                 <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Số lượng" required>
-                                    <Form.Item name="soluong" noStyle label="Số lượng" rules={[{ required: true, type:'number' }]}>
+                                    <Form.Item name="soluong" noStyle label="Số lượng" rules={[{ required: true, type: 'number' }]}>
                                         <InputNumber style={{ width: '50%' }} placeholder="Eg.100" />
                                     </Form.Item>
                                 </Form.Item>
                                 <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Đơn vị tính" required>
-                                    <Form.Item name="donvitinh" noStyle label="Đơn vị tính" rules={[{ required: true}]}>
+                                    <Form.Item name="donvitinh" noStyle label="Đơn vị tính" rules={[{ required: true }]}>
                                         <Input placeholder="Eg.cái" />
                                     </Form.Item>
                                 </Form.Item>
@@ -113,7 +142,7 @@ class ThemMoiYeuCau extends Component {
                                 <Row>
                                     <Col span={12}>
                                         <Form.Item wrapperCol={{ sm: 22 }} label="Tiêu đề" required>
-                                            <Form.Item name="tieude" noStyle label="Tiêu đề" rules={[{ required: true}]}>
+                                            <Form.Item name="tieude" noStyle label="Tiêu đề" rules={[{ required: true }]}>
                                                 <Input placeholder="Eg.cái" />
                                             </Form.Item>
                                         </Form.Item>
@@ -128,7 +157,7 @@ class ThemMoiYeuCau extends Component {
                                 </Row>
 
                                 <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Mô tả yêu cầu" required>
-                                    <Form.Item name="motayeucau" noStyle label="Mô tả yêu cầu" rules={[{ required: true}]}>
+                                    <Form.Item name="motayeucau" noStyle label="Mô tả yêu cầu" rules={[{ required: true }]}>
                                         <Input.TextArea rows={6} placeholder="Eg.mô tả yêu cầu" />
                                     </Form.Item>
                                 </Form.Item>
@@ -136,7 +165,7 @@ class ThemMoiYeuCau extends Component {
                                 <Row>
                                     <Col span={12}>
                                         <Form.Item wrapperCol={{ sm: 22 }} style={{ width: "100%" }} label="Tên sản phẩm" required>
-                                            <Form.Item name="tensanpham" noStyle label="Tên sản phẩm" rules={[{ required: true}]}>
+                                            <Form.Item name="tensanpham" noStyle label="Tên sản phẩm" rules={[{ required: true }]}>
                                                 <Input placeholder="Eg.Tên sản phẩm" />
                                             </Form.Item>
                                         </Form.Item>
@@ -151,7 +180,7 @@ class ThemMoiYeuCau extends Component {
                                 </Row>
 
 
-                                <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Dragger">
+                                <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Đơn đặt hàng liên quan">
                                     <Form.Item name="dragger" valuePropName="fileList" getValueFromEvent={normFile} noStyle>
                                         <Upload.Dragger style={{ width: '100%' }} name="files" action="/upload.do">
                                             <p className="ant-upload-text">Thả tệp vào đây hoặc chọn từ trình duyệt</p>
@@ -177,7 +206,14 @@ class ThemMoiYeuCau extends Component {
     }
 }
 
-export default ThemMoiYeuCau;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onAdd: (YCMH) => {
+            dispatch(act_Add_YCMH_PHONGBAN(YCMH))
+        }
+    }
+}
 
+export default connect(null, mapDispatchToProps)(ThemMoiYeuCau);
 
 

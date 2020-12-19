@@ -9,7 +9,10 @@ import {
     Col,
     Input,
     DatePicker,
+    message,
 } from 'antd';
+import { act_Add_YCMH_DOANHNGHIEP } from '../../../action';
+import { connect } from 'react-redux';
 const formItemLayout = {
     labelCol: {
         span: 6,
@@ -35,13 +38,32 @@ const validateMessages = {
     },
 };
 const temp = `< Yêu cầu doanh nghiệp`
+const key = 'updatable';
 class ThemMoiYeuCau extends Component {
     goBack = (e) => {
         e.preventDefault();
         this.props.history.goBack();
     }
     onFinish = (values) => {
-        console.log('Received values of form: ', values);
+        var chititet = `${values.soluong} ${values.donvitinh}`;
+
+        // var ngaynhanhang = new Date(values.ngaynhanhang.toString()).toLocaleDateString();
+
+        var ngaytao = new Date(values.ngaytao.toString()).toLocaleDateString();
+        // values.ngaynhanhang = ngaynhanhang;
+        values.ngaytao = ngaytao;
+
+        var data = { ...values, chitiet: chititet }
+
+        
+        message.loading({ content: 'Đang thực hiện thao tác...', key });
+        setTimeout(() => {
+            message.success({ content: 'Thêm dữ liệu thành công!', key, duration: 2 });
+            this.props.history.goBack();
+        }, 2000);
+        console.log('Received values of form: ', data);
+
+        this.props.onAdd(data)
     };
     render() {
         return (
@@ -65,8 +87,8 @@ class ThemMoiYeuCau extends Component {
                     >
                         <Row>
                             <Col span={12}>
-                                <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Tên khách hàng" required>
-                                    <Form.Item name="tenkhachhang" label="Tên khách hàng" rules={[{ required: true }]} noStyle>
+                                <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Tên người đại diện" required>
+                                    <Form.Item name="tennguoidaidien" label="Tên người đại diện" rules={[{ required: true }]} noStyle>
                                         <Input placeholder="Eg.Tên người đại diện" />
                                     </Form.Item>
                                 </Form.Item>
@@ -144,4 +166,12 @@ class ThemMoiYeuCau extends Component {
     }
 }
 
-export default ThemMoiYeuCau;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onAdd: (YCMH) => {
+            dispatch(act_Add_YCMH_DOANHNGHIEP(YCMH))
+        }
+    }
+}
+
+export default connect(null, mapDispatchToProps)(ThemMoiYeuCau);

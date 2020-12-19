@@ -8,6 +8,12 @@ const { Step } = Steps;
 
 
 class subtable extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            hasLink: 'invisible'
+        }
+    }
 
     renderStep = () => {
         if (this.props.renderStep === true) {
@@ -36,6 +42,29 @@ class subtable extends Component {
         }
     }
 
+    renderLink = () => {
+        if (this.props.data.dondathang !== undefined) {
+            return (
+                this.props.data.dondathang.map(e => {
+                    return (
+                        <li>
+                            <a href="/#">{e}</a>
+                            {/* <link></link>{} */}
+                        </li>
+                    );
+                })
+            )
+        }
+    }
+
+    componentDidMount() {
+        if (this.props.data.dondathang !== undefined) {
+            this.setState({
+                hasLink: ""
+            })
+        }
+    }
+
     render() {
         return (
             <div className="ant-table-wrapper">
@@ -49,15 +78,21 @@ class subtable extends Component {
                                         <tbody className="ant-table-tbody">
                                             <tr data-row-key={1} className="ant-table-row ant-table-row-level-0">
                                                 <td className="ant-table-cell invisible">1</td>
-                                                <td className="ant-table-cell sub"><strong>{this.props.columns[1].title}</strong><br />{this.props.data.nguoidaidien}</td>
-                                                <td className="ant-table-cell sub"><strong>{this.props.columns[2].title}</strong><br />{this.props.data.lienhe}</td>
+                                                <td className="ant-table-cell sub"><strong>{this.props.columns[1].title}</strong><br />{this.props.data.tennguoidaidien}</td>
+                                                <td className="ant-table-cell sub"><strong>{this.props.columns[2].title}</strong><br />{this.props.data.email}</td>
                                                 <td className="ant-table-cell sub"><strong>{this.props.columns[3].title}</strong><br />{this.props.data.chitiet}</td>
-                                                <td className="ant-table-cell sub"><strong>{this.props.columns[4].title}</strong><br />{this.props.data.date}</td>
-                                                <td className="ant-table-cell invisible">
+                                                <td className="ant-table-cell sub"><strong>{this.props.columns[4].title}</strong><br />{this.props.data.ngaytao}</td>
+                                                <td className={`ant-table-cell sub ${this.state.hasLink}`}>
+                                                    <strong>Đơn đặt hàng</strong><br />
+                                                    <ul>
+                                                        {this.renderLink()}
+                                                    </ul>
+                                                </td>
+                                                {/* <td className="ant-table-cell invisible">
                                                     <span>
                                                         <span className="ant-tag yellow">ĐANG ĐỢI PHÊ DUYỆT</span>
                                                     </span>
-                                                </td>
+                                                </td> */}
                                                 <td className="ant-table-cell invisible">
                                                     <a href="/#"><img src="./edit.svg" alt="" /></a>
                                                 </td>
@@ -70,7 +105,7 @@ class subtable extends Component {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div >
         );
     }
 }

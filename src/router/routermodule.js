@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import page from '../component/page';
 import page1 from '../component/page1/page1';
-import page2 from '../component/page1/page2';
 import YeuCauDoanhNghiep from '../component/YeuCauMuaHang/doanhnghiep/YeuCauDoanhNghiep';
 import ThemMoiYeuCau from '../component/YeuCauMuaHang/phongban/ThemMoiYeuCau';
 import ThemMoiYeuCauDoanhNghiep from '../component/YeuCauMuaHang/doanhnghiep/ThemMoiYeuCau';
@@ -16,7 +15,6 @@ class router extends Component {
         return (
             <div>
                 <AppRoute exact path="/yeucauphongban" component={YeuCauPhongBan} layout={page} />
-                <AppRoute exact path="/2" component={page2} layout={page} />
                 <AppRoute exact path="/" component={page1} layout={page} />
                 <AppRoute exact path="/themmoiyeucau" component={ThemMoiYeuCau} layout={page} />
 

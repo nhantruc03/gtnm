@@ -5,12 +5,13 @@ import Title from 'antd/lib/typography/Title';
 import Search from '../../search';
 import Subtable from '../../subtable'
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 const columns = [
     { title: 'ID', dataIndex: 'ID', key: 'ID' },
-    { title: 'Tiêu đề', dataIndex: 'title', key: 'title' },
-    { title: 'Doanh nghiệp', dataIndex: 'dn', key: 'dn' },
-    { title: 'Sản phẩm', dataIndex: 'product', key: 'product' },
-    { title: 'Ngày nhận', dataIndex: 'date', key: 'date' },
+    { title: 'Tiêu đề', dataIndex: 'tieude', key: 'tieude' },
+    { title: 'Doanh nghiệp', dataIndex: 'tendoanhnghiep', key: 'tendoanhnghiep' },
+    { title: 'Sản phẩm', dataIndex: 'tensanpham', key: 'tensanpham' },
+    { title: 'Ngày tạo', dataIndex: 'ngaytao', key: 'ngaytao' },
     {
         title: 'tags',
         dataIndex: 'tags',
@@ -38,19 +39,19 @@ const columns = [
         ),
     },
     {
-        title: 'Hàng động',
+        title: 'Hành động',
         dataIndex: '',
         key: 'x',
-        render: () => <a href="/#"><img src="./edit.svg" alt="" /></a>,
+        render: ID => <Link to={`/donmuahang/${ID}`}><img src="./edit.svg" alt="" /></Link>,
     },
 ];
 
 const sub_columns = [
     { title: 'ID', dataIndex: 'ID', key: 'ID' },
-    { title: 'Người đại diện', dataIndex: 'nguoidaidien', key: 'nguoidaidien' },
-    { title: 'Liên hệ', dataIndex: 'lienhe', key: 'lienhe' },
+    { title: 'Người đại diện', dataIndex: 'tennguoidaidien', key: 'tennguoidaidien' },
+    { title: 'Liên hệ', dataIndex: 'email', key: 'email' },
     { title: 'Chi tiết', dataIndex: 'chitiet', key: 'chitiet' },
-    { title: 'Ngày nhận', dataIndex: 'date', key: 'date' },
+    { title: 'Ngày tạo', dataIndex: 'ngaytao', key: 'ngaytao' },
     {
         title: 'tags',
         dataIndex: 'tags',
@@ -85,44 +86,45 @@ const sub_columns = [
     },
 ];
 
-const data = [
-    {
-        key: 1,
-        ID: 4,
-        title: 'John Brown',
-        dn: 32,
-        product: 'New York No. 1 Lake Park',
-        date: '03/12/2020',
-        tags: ['Đang đợi phê duyệt'],
-        nguoidaidien: 'Nguyen Van A',
-        lienhe: 'example@gmail.com',
-        chitiet: '1000 tấn',
-    },
-    {
-        key: 2,
-        ID: 5,
-        title: 'John Brown',
-        dn: 32,
-        product: 'New York No. 1 Lake Park',
-        date: '03/12/2020',
-        tags: ['Đã phê duyệt'],
-        nguoidaidien: 'Nguyen Van A',
-        lienhe: 'example@gmail.com',
-        chitiet: '1000 tấn',
-    },
-    {
-        key: 3,
-        ID: 6,
-        title: 'John Brown',
-        dn: 32,
-        product: 'New York No. 1 Lake Park',
-        date: '03/12/2020',
-        tags: ['Đã từ chối'],
-        nguoidaidien: 'Nguyen Van A',
-        lienhe: 'example@gmail.com',
-        chitiet: '1000 tấn',
-    },
-];
+// const data = [
+//     {
+//         key: 1,
+//         ID: 4,
+//         tieude: 'John Brown',
+//         tendoanhnghiep: 32,
+//         tensanpham: 'New York No. 1 Lake Park',
+//         ngaynhanhang: '03/12/2020',
+//         ngaytao: '03/12/2020',
+//         tags: ['Đang đợi phê duyệt'],
+//         tennguoidaidien: 'Nguyen Van A',
+//         email: 'example@gmail.com',
+//         chitiet: '1000 tấn',
+//     },
+//     {
+//         key: 2,
+//         ID: 5,
+//         title: 'John Brown',
+//         dn: 32,
+//         product: 'New York No. 1 Lake Park',
+//         date: '03/12/2020',
+//         tags: ['Đã phê duyệt'],
+//         nguoidaidien: 'Nguyen Van A',
+//         lienhe: 'example@gmail.com',
+//         chitiet: '1000 tấn',
+//     },
+//     {
+//         key: 3,
+//         ID: 6,
+//         title: 'John Brown',
+//         dn: 32,
+//         product: 'New York No. 1 Lake Park',
+//         date: '03/12/2020',
+//         tags: ['Đã từ chối'],
+//         nguoidaidien: 'Nguyen Van A',
+//         lienhe: 'example@gmail.com',
+//         chitiet: '1000 tấn',
+//     },
+// ];
 
 
 
@@ -130,7 +132,7 @@ class YeuCauDoanhNghiep extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            SearchData: data,
+            SearchData: this.props.data,
         }
     }
     getSearchData = (data) => {
@@ -147,7 +149,7 @@ class YeuCauDoanhNghiep extends Component {
 
                 <Row style={{ marginLeft: 30, marginRight: 30 }}>
                     <Col span={8}>
-                        <Search target="title" data={data} getSearchData={(e) => this.getSearchData(e)}  />
+                        <Search target="tieude" data={this.props.data} getSearchData={(e) => this.getSearchData(e)}  />
                     </Col>
                     <Col span={16}>
                         <Button className="add" style={{ float: "right" }} >
@@ -174,4 +176,10 @@ class YeuCauDoanhNghiep extends Component {
     }
 }
 
-export default YeuCauDoanhNghiep;
+const mapStateToProps = state => {
+    return {
+        data: state.YCMH_DOANHNGHIEP
+    }
+}
+
+export default connect(mapStateToProps, null)(YeuCauDoanhNghiep);

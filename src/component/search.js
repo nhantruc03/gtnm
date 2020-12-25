@@ -17,7 +17,7 @@ class s extends Component {
 
     render() {
         return (
-            <Search style={{ marginBottom: 15, borderTopLeftRadius: '10px' }} onChange={(e) => this.onChange(e)}></Search>
+            <Search placeholder="Tìm kiếm" style={{ marginBottom: 15, borderTopLeftRadius: '10px' }}  onChange={(e) => this.onChange(e)}></Search>
         );
     }
 }

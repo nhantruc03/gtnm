@@ -32,7 +32,7 @@ const columns = [
         sorter: (a, b) => a.tongtien - b.tongtien,
     },
     {
-        title: 'tags',
+        title: 'Trạng thái',
         dataIndex: 'tags',
         key: 'tags',
         render: tags => (
@@ -50,7 +50,7 @@ const columns = [
                     }
                     return (
                         <Tag className={`${color}`} key={tag}>
-                            {tag.toUpperCase()}
+                            {tag}
                         </Tag>
                     );
                 })}
@@ -90,7 +90,7 @@ const sub_columns = [
                     }
                     return (
                         <Tag className={`${color}`} key={tag}>
-                            {tag.toUpperCase()}
+                        
                         </Tag>
                     );
                 })}
@@ -139,7 +139,7 @@ class danhsach extends Component {
                     </Col>
                 </Row>
 
-                <div className="site-layout-background" style={{ padding: 24, margin: 30, marginTop: 10, minHeight: 360, borderRadius: '10px' }}>
+                <div className="site-layout-background" style={{ padding: 24, margin: 30, marginTop: 10, minHeight: 360, borderRadius: '10px', boxShadow: 'inherit' }}>
                     <Table
                         expandRowByClick={true}
                         columns={columns}

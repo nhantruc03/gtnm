@@ -49,7 +49,10 @@
 
 .site-layout .site-layout-background {
     background: #fff;
+    
 }
+
+
 
 .ant-input-group>.ant-input:first-child,
 .ant-input-group-addon:first-child {
@@ -110,10 +113,11 @@ span.ant-tag {
     font-style: normal;
     font-weight: normal;
     font-size: unset;
+    text-align: center;
     line-height: 140%;
     border-radius: 16px;
     border: 0px;
-    padding: 5px 0 5px 0;
+    padding: 5px 5px 5px 5px;
     width: 100%;
     text-transform: none;
     white-space: break-spaces;
@@ -169,13 +173,14 @@ button.ant-btn.ant-btn-icon-only.ant-input-search-button {
 }
 
 th.ant-table-cell {
-    text-align: center !important;
-    max-width: 20px !important;
+    text-align: left !important;
+    max-width: max-content !important;
+    background: #F1F7FF;
 }
 
 td.ant-table-cell {
-    text-align: center !important;
-    max-width: 20px !important;
+    text-align: left !important;
+    max-width: max-content!important;
 }
 
 .invisible {

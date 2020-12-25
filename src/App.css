@@ -173,14 +173,14 @@ button.ant-btn.ant-btn-icon-only.ant-input-search-button {
 }
 
 th.ant-table-cell {
-    text-align: left !important;
-    max-width: max-content !important;
+    text-align: center !important;
+    max-width: 20px !important;
     background: #F1F7FF;
 }
 
 td.ant-table-cell {
-    text-align: left !important;
-    max-width: max-content!important;
+    text-align: center !important;
+    max-width: 20px!important;
 }
 
 .invisible {

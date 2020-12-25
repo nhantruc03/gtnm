@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import { Content } from 'antd/lib/layout/layout';
-import Title from 'antd/lib/typography/Title';
-import Search from '../search';
-import { Result, Button } from 'antd';
 class page1 extends Component {
     render() {
         return (
@@ -23,4 +20,3 @@ class page1 extends Component {
 }
 
 export default page1;
-

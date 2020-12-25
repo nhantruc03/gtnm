@@ -46,15 +46,11 @@ class donmuahang extends Component {
         const temp = `< Đơn mua hàng ${this.props.match.params.id}`
         return (
             <Content style={{ margin: '0 16px' }}>
-
-
-
                 <Row style={{ marginTop: 15, marginLeft: 30, marginRight: 30 }}>
                     <Col span={8}>
                         <Title style={{ color: '#002140' }} level={3}><a style={{ color: '#002140' }} onClick={this.goBack} href="/#">{temp}</a></Title>
                     </Col>
                 </Row>
-
                 <div className="site-layout-background" style={{ padding: 24, margin: 30, marginTop: 10, minHeight: 360, borderRadius: '10px' }}>
                     <Form
                         name="validate_other"
@@ -85,11 +81,8 @@ class donmuahang extends Component {
                                         <Input placeholder="Eg.Nhà cung cấp" />
                                     </Form.Item>
                                 </Form.Item>
-
-
                             </Col>
                             <Col span={12}>
-
                                 <Row>
                                     <Col span={12}>
                                         <Form.Item wrapperCol={{ sm: 22 }} label="Đơn giá" required>
@@ -106,7 +99,6 @@ class donmuahang extends Component {
                                         </Form.Item>
                                     </Col>
                                 </Row>
-
                                 <Row>
                                     <Col span={12}>
                                         <Form.Item wrapperCol={{ sm: 22 }} label="Thuế" required>
@@ -123,7 +115,6 @@ class donmuahang extends Component {
                                         </Form.Item>
                                     </Col>
                                 </Row>
-
                                 <Row>
                                     <Col span={12}>
                                         <Form.Item wrapperCol={{ sm: 22 }} label="Đơn vị tiền" required>
@@ -140,21 +131,17 @@ class donmuahang extends Component {
                                         </Form.Item>
                                     </Col>
                                 </Row>
-
                                 <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Người phụ trách" required>
                                     <Form.Item name="nguoiphutrach" noStyle label="Người phụ trách" rules={[{ required: true }]}>
                                         <Input placeholder="Eg.Người phụ trách" />
                                     </Form.Item>
                                 </Form.Item>
-
                             </Col>
                         </Row>
                         <Form.Item wrapperCol={{ span: 24, offset: 9 }}>
                             <Button onClick={this.goBack} className="back" style={{ width: 150, marginRight: 20 }}>Hủy</Button>
                             <Button htmlType="submit" className="add" style={{ width: 150 }}>Lưu</Button>
                         </Form.Item>
-
-
                     </Form>
                 </div>
             </Content>

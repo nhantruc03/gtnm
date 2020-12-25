@@ -86,48 +86,6 @@ const sub_columns = [
     },
 ];
 
-// const data = [
-//     {
-//         key: 1,
-//         ID: 4,
-//         tieude: 'John Brown',
-//         tendoanhnghiep: 32,
-//         tensanpham: 'New York No. 1 Lake Park',
-//         ngaynhanhang: '03/12/2020',
-//         ngaytao: '03/12/2020',
-//         tags: ['Đang đợi phê duyệt'],
-//         tennguoidaidien: 'Nguyen Van A',
-//         email: 'example@gmail.com',
-//         chitiet: '1000 tấn',
-//     },
-//     {
-//         key: 2,
-//         ID: 5,
-//         title: 'John Brown',
-//         dn: 32,
-//         product: 'New York No. 1 Lake Park',
-//         date: '03/12/2020',
-//         tags: ['Đã phê duyệt'],
-//         nguoidaidien: 'Nguyen Van A',
-//         lienhe: 'example@gmail.com',
-//         chitiet: '1000 tấn',
-//     },
-//     {
-//         key: 3,
-//         ID: 6,
-//         title: 'John Brown',
-//         dn: 32,
-//         product: 'New York No. 1 Lake Park',
-//         date: '03/12/2020',
-//         tags: ['Đã từ chối'],
-//         nguoidaidien: 'Nguyen Van A',
-//         lienhe: 'example@gmail.com',
-//         chitiet: '1000 tấn',
-//     },
-// ];
-
-
-
 class YeuCauDoanhNghiep extends Component {
     constructor(props) {
         super(props);
@@ -145,7 +103,6 @@ class YeuCauDoanhNghiep extends Component {
         return (
             <Content style={{ margin: '0 16px' }}>
                 <Title style={{ marginLeft: 30, color: '#002140', marginTop: 15 }} level={3}>Yều cầu doanh nghiệp</Title>
-
 
                 <Row style={{ marginLeft: 30, marginRight: 30 }}>
                     <Col span={8}>

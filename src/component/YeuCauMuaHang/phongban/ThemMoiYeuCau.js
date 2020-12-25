@@ -67,9 +67,12 @@ class ThemMoiYeuCau extends Component {
         values.ngaytao = ngaytao;
 
         var dondathang=[];
-        values.dragger.forEach((e)=>{
-            dondathang.push(e.uid)
-        })
+        if(values.dragger !== undefined){
+            values.dragger.forEach((e)=>{
+                dondathang.push(e.uid)
+            })
+        }
+     
 
         var data = { ...values, chitiet: chititet, dondathang: dondathang }
 
@@ -86,8 +89,6 @@ class ThemMoiYeuCau extends Component {
     render() {
         return (
             <Content style={{ margin: '0 16px' }}>
-
-
 
                 <Row style={{ marginTop: 15, marginLeft: 30, marginRight: 30 }}>
                     <Col span={8}>
@@ -179,7 +180,6 @@ class ThemMoiYeuCau extends Component {
                                     </Col>
                                 </Row>
 
-
                                 <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Đơn đặt hàng liên quan">
                                     <Form.Item name="dragger" valuePropName="fileList" getValueFromEvent={normFile} noStyle>
                                         <Upload.Dragger style={{ width: '100%' }} name="files" action="/upload.do">
@@ -197,7 +197,6 @@ class ThemMoiYeuCau extends Component {
                             <Button onClick={this.goBack} className="back" style={{ width: 150, marginRight: 20 }}>Hủy</Button>
                             <Button htmlType="submit" className="add" style={{ width: 150 }}>Lưu</Button>
                         </Form.Item>
-
 
                     </Form>
                 </div>

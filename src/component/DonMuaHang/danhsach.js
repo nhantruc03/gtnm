@@ -4,12 +4,13 @@ import { Content } from 'antd/lib/layout/layout';
 import Title from 'antd/lib/typography/Title';
 import Search from '../search';
 import Subtable from '../subtable'
+import { connect } from 'react-redux';
 const columns = [
     { title: 'ID', dataIndex: 'ID', key: 'ID' },
-    { title: 'Tiêu đề', dataIndex: 'title', key: 'title' },
-    { title: 'Doanh nghiệp', dataIndex: 'dn', key: 'dn' },
-    { title: 'Sản phẩm', dataIndex: 'product', key: 'product' },
-    { title: 'Ngày nhận', dataIndex: 'date', key: 'date' },
+    { title: 'Tiêu đề', dataIndex: 'tieude', key: 'tieude' },
+    { title: 'Doanh nghiệp', dataIndex: 'tendoanhnghiep', key: 'tendoanhnghiep' },
+    { title: 'Sản phẩm', dataIndex: 'tensanpham', key: 'tensanpham' },
+    { title: 'Ngày nhận', dataIndex: 'ngaynhanhang', key: 'ngaynhanhang' },
     {
         title: 'tags',
         dataIndex: 'tags',
@@ -84,44 +85,45 @@ const sub_columns = [
     },
 ];
 
-const data = [
-    {
-        key: 1,
-        ID: 2,
-        title: 'John Brown',
-        dn: 32,
-        product: 'New York No. 1 Lake Park',
-        date: '03/12/2020',
-        tags: ['Đã phê duyệt'],
-        nguoidaidien: 'Nguyen Van A',
-        lienhe: 'example@gmail.com',
-        chitiet: '1000 tấn',
-        tinhtrang: 2,
-    },
-    {
-        key: 2,
-        ID: 5,
-        title: 'John Brown',
-        dn: 32,
-        product: 'New York No. 1 Lake Park',
-        date: '03/12/2020',
-        tags: ['Đã phê duyệt'],
-        nguoidaidien: 'Nguyen Van A',
-        lienhe: 'example@gmail.com',
-        chitiet: '1000 tấn',
-        tinhtrang: 3,
-    },
-];
-
+// const data = [
+//     {
+//         key: 1,
+//         ID: 2,
+//         title: 'John Brown',
+//         dn: 32,
+//         product: 'New York No. 1 Lake Park',
+//         date: '03/12/2020',
+//         tags: ['Đã phê duyệt'],
+//         nguoidaidien: 'Nguyen Van A',
+//         lienhe: 'example@gmail.com',
+//         chitiet: '1000 tấn',
+//         tinhtrang: 2,
+//     },
+//     {
+//         key: 2,
+//         ID: 5,
+//         title: 'John Brown',
+//         dn: 32,
+//         product: 'New York No. 1 Lake Park',
+//         date: '03/12/2020',
+//         tags: ['Đã phê duyệt'],
+//         nguoidaidien: 'Nguyen Van A',
+//         lienhe: 'example@gmail.com',
+//         chitiet: '1000 tấn',
+//         tinhtrang: 3,
+//     },
+// ];
 
 
 class danhsach extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            SearchData: data,
+            data: this.props.data,
+            SearchData: this.props.data,
         }
     }
+    
     getSearchData = (data) => {
         console.log(data)
         this.setState({
@@ -136,7 +138,7 @@ class danhsach extends Component {
 
                 <Row style={{ marginLeft: 30, marginRight: 30 }}>
                     <Col span={8}>
-                        <Search target="title" data={data} getSearchData={(e) => this.getSearchData(e)} />
+                        <Search target="title" data={this.state.data} getSearchData={(e) => this.getSearchData(e)} />
                     </Col>
                 </Row>
 
@@ -158,4 +160,10 @@ class danhsach extends Component {
     }
 }
 
-export default danhsach;
+const mapStateToProps = state => {
+    return {
+        data: state.DONMUAHANG
+    }
+}
+
+export default connect(mapStateToProps, null)(danhsach);

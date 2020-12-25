@@ -86,45 +86,6 @@ const sub_columns = [
     },
 ];
 
-// const data = [
-//     {
-//         key: 1,
-//         ID: 1,
-//         title: 'John Brown',
-//         dn: 32,
-//         product: 'New York No. 1 Lake Park',
-//         date: '03/12/2020',
-//         tags: ['Đang đợi phê duyệt'],
-//         nguoidaidien: 'Nguyen Van A',
-//         lienhe: 'example@gmail.com',
-//         chitiet: '1000 tấn',
-//     },
-//     {
-//         key: 2,
-//         ID: 2,
-//         title: 'John Brown',
-//         dn: 32,
-//         product: 'New York No. 1 Lake Park',
-//         date: '03/12/2020',
-//         tags: ['Đã phê duyệt'],
-//         nguoidaidien: 'Nguyen Van A',
-//         lienhe: 'example@gmail.com',
-//         chitiet: '1000 tấn',
-//     },
-//     {
-//         key: 3,
-//         ID: 3,
-//         title: 'John Brown',
-//         dn: 32,
-//         product: 'New York No. 1 Lake Park',
-//         date: '03/12/2020',
-//         tags: ['Đã từ chối'],
-//         nguoidaidien: 'Nguyen Van A',
-//         lienhe: 'example@gmail.com',
-//         chitiet: '1000 tấn',
-//     },
-// ];
-
 class YeuCauPhongBan extends Component {
     constructor(props) {
         super(props);

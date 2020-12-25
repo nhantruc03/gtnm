@@ -68,12 +68,12 @@ class ChaoGia_item extends Component {
             data.map((e,key) => {
                 if (e.select === false) {
                     return (
-                        <DrawerItem data={e} select="1px solid #C9C9C9" onSelect={(e) => this.onSelect(e)} key={key}></DrawerItem>
+                        <DrawerItem data={e} select="1px solid #C9C9C9" onSelect={(a) => this.onSelect(a)} key={key}></DrawerItem>
                     )
                 }
                 else {
                     return (
-                        <DrawerItem data={e} select="2px solid #1452B2" onSelect={(e) => this.onSelect(e)} key={key}></DrawerItem>
+                        <DrawerItem data={e} select="2px solid #1452B2" onSelect={(a) => this.onSelect(a)} key={key}></DrawerItem>
                     )
 
                 }

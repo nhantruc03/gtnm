@@ -7,11 +7,27 @@ import Subtable from '../../subtable'
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 const columns = [
-    { title: 'ID', dataIndex: 'ID', key: 'ID' },
-    { title: 'Tiêu đề', dataIndex: 'tieude', key: 'tieude' },
-    { title: 'Doanh nghiệp', dataIndex: 'tendoanhnghiep', key: 'tendoanhnghiep' },
-    { title: 'Sản phẩm', dataIndex: 'tensanpham', key: 'tensanpham' },
-    { title: 'Ngày nhận', dataIndex: 'ngaynhanhang', key: 'ngaynhanhang' },
+    {
+        title: 'ID', dataIndex: 'ID', key: 'ID',
+        sorter: (a, b) => a.ID - b.ID,
+    },
+    {
+        title: 'Tiêu đề', dataIndex: 'tieude', key: 'tieude',
+        sorter: (a, b) => a.tieude.length - b.tieude.length,
+
+    },
+    {
+        title: 'Doanh nghiệp', dataIndex: 'tendoanhnghiep', key: 'tendoanhnghiep',
+        sorter: (a, b) => a.tendoanhnghiep.length - b.tendoanhnghiep.length,
+    },
+    {
+        title: 'Sản phẩm', dataIndex: 'tensanpham', key: 'tensanpham',
+        sorter: (a, b) => a.tensanpham.length - b.tensanpham.length,
+    },
+    {
+        title: 'Ngày nhận', dataIndex: 'ngaynhanhang', key: 'ngaynhanhang',
+        sorter: (a, b) => new Date(a.ngaynhanhang).getTime() - new Date(b.ngaynhanhang).getTime(),
+    },
     {
         title: 'tags',
         dataIndex: 'tags',
@@ -91,8 +107,17 @@ class YeuCauPhongBan extends Component {
         super(props);
         this.state = {
             SearchData: this.props.data,
+            filteredInfo: null,
+            sortedInfo: null,
         }
     }
+    handleChange = (pagination, filters, sorter) => {
+        console.log('Various parameters', pagination, filters, sorter);
+        this.setState({
+            filteredInfo: filters,
+            sortedInfo: sorter,
+        });
+    };
     getSearchData = (data) => {
         console.log(data)
         this.setState({
@@ -118,6 +143,7 @@ class YeuCauPhongBan extends Component {
 
                 <div className="site-layout-background" style={{ padding: 24, margin: 30, marginTop: 10, minHeight: 360, borderRadius: '10px' }}>
                     <Table
+                        onChange={this.handleChange}
                         expandRowByClick={true}
                         columns={columns}
                         expandable={{

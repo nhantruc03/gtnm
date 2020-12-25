@@ -6,21 +6,22 @@ import * as types from '../constants/ActionType';
 var data = [
     {
         key: 1,
-        ID: "1",
+        ID: 1,
         tieude: 'John Brown',
         tendoanhnghiep: 32,
         tensanpham: 'New York No. 1 Lake Park',
-        ngaynhanhang: '12/03/2020',
+        ngaynhanhang: '12/02/2020',
         tags: ['Đang đợi phê duyệt'],
         tennguoidaidien: 'Nguyen Van A',
         email: 'example@gmail.com',
         chitiet: '1000 tấn',
         ngaytao: '12/03/2020',
-        dondathang:['asdfasdfasdf','asdfasdfasdf'],
-        mota:'ABC',
+        dondathang: ['link_1', 'link_2'],
+        mota: 'ABC',
         sdt: '01231203',
         soluong: '1000',
         donvitinh: 'cái',
+        dataodonhang: false,
     },
     {
         key: 2,
@@ -34,12 +35,13 @@ var data = [
         email: 'example@gmail.com',
         chitiet: '1000 cái',
         ngaytao: '12/03/2020',
-        dondathang:['asdfasdfasdf','asdfasdfasdf'],
-        tinhtrang:2,
-        mota:'ABC',
+        dondathang: ['link_1', 'link_2'],
+        tinhtrang: 0,
+        mota: 'ABC',
         sdt: '01231203',
-        soluong: '1000',
+        soluong: 1000,
         donvitinh: 'cái',
+        dataodonhang: false,
     },
     {
         key: 3,
@@ -47,17 +49,18 @@ var data = [
         tieude: 'John Brown',
         tendoanhnghiep: 32,
         tensanpham: 'New York No. 1 Lake Park',
-        ngaynhanhang: '12/03/2020',
+        ngaynhanhang: '12/04/2020',
         tags: ['Đã từ chối'],
         tennguoidaidien: 'Nguyen Van A',
         email: 'example@gmail.com',
         chitiet: '1000 tấn',
-        ngaytao: '12/03/2020',
-        dondathang:['asdfasdfasdf','asdfasdfasdf'],
-        mota:'ABC',
+        ngaytao: '12/04/2020',
+        dondathang: ['link_1', 'link_2'],
+        mota: 'ABC',
         sdt: '01231203',
         soluong: '1000',
         donvitinh: 'cái',
+        dataodonhang: false,
     },
 ];
 
@@ -71,6 +74,15 @@ const YCMH_PHONGBAN = (state = inittialState, action) => {
             state.push(
                 YCMH
             )
+            return [...state];
+        case types.EDIT_DATAODONMUAHANG:
+            state.forEach(e => {
+                console.log(YCMH)
+                if (Number(e.ID) === Number(YCMH)) {
+                    e.dataodonhang = true
+                }
+            })
+            console.log(state)
             return [...state];
         default: return [...state];
     }

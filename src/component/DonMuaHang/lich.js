@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Calendar, Row, Col, Tag, Modal, Input, InputNumber} from 'antd';
+import { Form, Calendar, Row, Col, Tag, Modal, Input, InputNumber } from 'antd';
 import Title from 'antd/lib/typography/Title';
 import { Content } from 'antd/lib/layout/layout';
 import { connect } from 'react-redux';
@@ -38,23 +38,26 @@ class lich extends Component {
 
         let listData = [];
         this.props.data.forEach(element => {
-            var date = new Date(element.ngaynhanhang)
+            if (element.tags.indexOf('Đã phê duyệt') > -1) {
+                var date = new Date(element.ngaynhanhang)
 
-            if (value.date() === date.getDate() && value.month() === date.getMonth() && value.year() === date.getFullYear()) {
-                listData.push({
-                    type: 'yellow',
-                    content: `Nhận hàng:  ${element.tieude}`,
-                    id: element.ID
-                })
+                if (value.date() === date.getDate() && value.month() === date.getMonth() && value.year() === date.getFullYear()) {
+                    listData.push({
+                        type: 'yellow',
+                        content: `Nhận hàng:  ${element.tensanpham}`,
+                        id: element.ID
+                    })
+                }
+                date = new Date(element.ngaythanhtoan)
+                if (value.date() === date.getDate() && value.month() === date.getMonth() && value.year() === date.getFullYear()) {
+                    listData.push({
+                        type: 'green',
+                        content: `Thanh toán:  ${element.tensanpham}`,
+                        id: element.ID
+                    })
+                }
             }
 
-            if (value.date() === date.getDate() + 3 && value.month() === date.getMonth() && value.year() === date.getFullYear()) {
-                listData.push({
-                    type: 'green',
-                    content: `Thanh toán:  ${element.tieude}`,
-                    id: element.ID
-                })
-            }
         });
 
         return listData || [];
@@ -103,78 +106,118 @@ class lich extends Component {
         }
 
     }
-
+    formRef = React.createRef();
     renderModel = (val) => {
+        // this.formRef.current.setFieldsValue(val)
+        console.log(val)
         return (
             <Form
+                ref={this.formRef}
                 name="validate_other"
                 {...formItemLayout}
                 onFinish={(e) => this.onFinish(e)}
                 layout="vertical"
                 validateMessages={validateMessages}
+                defaultValue={val}
             >
+
                 <Row>
-                    <Col span={12}>
-                        <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Tên người đại diện" required>
-                            <Form.Item name="tennguoidaidien" label="Tên người đại diện" rules={[{ required: true }]} noStyle>
-                                <Input disabled placeholder={val.tennguoidaidien} />
-                            </Form.Item>
-                        </Form.Item>
-                        <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Tên doanh nghiệp" required>
-                            <Form.Item name="tendoanhnghiep" noStyle label="Tên doanh nghiệp" rules={[{ required: true }]}>
-                                <Input disabled placeholder={val.tendoanhnghiep} />
-                            </Form.Item>
-                        </Form.Item>
-                        <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Email" required>
-                            <Form.Item name="email" noStyle label="Email" rules={[{ required: true, type: 'email' }]}>
-                                <Input placeholder={val.email} disabled />
-                            </Form.Item>
-                        </Form.Item>
-                        <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="SĐT" required>
-                            <Form.Item name="sdt" noStyle label="SĐT" rules={[{ required: true, type: 'number' }]}>
-                                <InputNumber disabled placeholder={val.sdt} style={{ width: '100%' }} />
-                            </Form.Item>
-                        </Form.Item>
-                        <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Số lượng" required>
-                            <Form.Item name="soluong" noStyle label="Số lượng" rules={[{ required: true, type: 'number' }]}>
-                                <InputNumber disabled placeholder={val.soluong} style={{ width: '100%' }} />
-                            </Form.Item>
-                        </Form.Item>
-
-
+                    <Col span={24}>
+                        <Title>Thông tin đơn hàng</Title>
                     </Col>
-                    <Col span={12}>
-                        <Row>
-                            <Col span={12}>
-                                <Form.Item wrapperCol={{ sm: 22 }} label="Tiêu đề" required>
-                                    <Form.Item name="tieude" noStyle label="Tiêu đề" rules={[{ required: true }]}>
-                                        <Input disabled placeholder={val.tieude} />
-                                    </Form.Item>
-                                </Form.Item>
-                            </Col>
-                            <Col span={12}>
-                                <Form.Item wrapperCol={{ sm: 19 }} label="Ngày tạo" required>
-                                    <Form.Item name="ngaytao" noStyle>
-                                        <Input disabled placeholder={val.ngaytao} />
-                                    </Form.Item>
-                                </Form.Item>
-                            </Col>
-                        </Row>
-
-                        <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Mô tả yêu cầu" required>
-                            <Form.Item name="motayeucau" noStyle label="Mô tả yêu cầu" rules={[{ required: true }]}>
-                                <Input.TextArea disabled placeholder={val.mota} rows={6} />
+                    <Col span={5}>
+                        <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Mã đơn hàng" required>
+                            <Form.Item name="ID" label="Mã đơn hàng" rules={[{ required: true }]} noStyle>
+                                <Input disabled placeholder={val.ID} />
                             </Form.Item>
                         </Form.Item>
-
-                        <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Tên sản phẩm" required>
-                            <Form.Item name="tensanpham" noStyle label="Tên sản phẩm" rules={[{ required: true }]}>
+                    </Col>
+                    <Col span={11}>
+                        <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Người phụ trách" required>
+                            <Form.Item name="nguoiphutrach" noStyle label="Người phụ trách" rules={[{ required: true }]}>
+                                <Input disabled placeholder={val.nguoiphutrach} />
+                            </Form.Item>
+                        </Form.Item>
+                    </Col>
+                    <Col span={8}>
+                        <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Tên hàng" required>
+                            <Form.Item name="tensanpham" noStyle label="Tên hàng" rules={[{ required: true }]}>
                                 <Input disabled placeholder={val.tensanpham} />
                             </Form.Item>
                         </Form.Item>
+                    </Col>
+
+                    <Col span={4}>
+                        <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Số lượng" required>
+                            <Form.Item name="soluong" noStyle label="Số lượng" rules={[{ required: true, type: 'number' }]}>
+                                <InputNumber disabled style={{ width: '100%' }} placeholder={val.soluong} />
+                            </Form.Item>
+                        </Form.Item>
+                    </Col>
+                    <Col span={4}>
                         <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Đơn vị tính" required>
                             <Form.Item name="donvitinh" noStyle label="Đơn vị tính" rules={[{ required: true }]}>
                                 <Input disabled placeholder={val.donvitinh} />
+                            </Form.Item>
+                        </Form.Item>
+                    </Col>
+                    <Col span={8}>
+                        <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Đơn giá" required>
+                            <Form.Item name="dongia" noStyle label="Đơn giá" rules={[{ required: true, type: 'number' }]}>
+                                <InputNumber disabled style={{ width: '100%' }} placeholder={val.dongia} />
+                            </Form.Item>
+                        </Form.Item>
+                    </Col>
+                    <Col span={8}>
+                        <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Tổng tiền" required>
+                            <Form.Item name="tongtien" noStyle label="Tổng tiền" rules={[{ required: true, type: 'number' }]}>
+                                <InputNumber disabled style={{ width: '100%' }} placeholder={val.tongtien} />
+                            </Form.Item>
+                        </Form.Item>
+                    </Col>
+
+                    <Col span={12}>
+                        <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Ngày nhận" required>
+                            <Form.Item name="ngaynhanhang" label="Ngày Nhận" noStyle rules={[{ required: true }]}>
+                                <Input disabled placeholder={val.ngaynhanhang} />
+                            </Form.Item>
+                        </Form.Item>
+                    </Col>
+                    <Col span={12}>
+                        <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Ngày thanh toán" required>
+                            <Form.Item name="ngaythanhtoan" label="Ngày thanh toán" noStyle rules={[{ required: true }]}>
+                                <Input disabled placeholder={val.ngaythanhtoan} />
+                            </Form.Item>
+                        </Form.Item>
+                    </Col>
+                    <Col span={24}>
+                        <Title>Thông tin nhà cung cấp</Title>
+                    </Col>
+                    <Col span={12}>
+                        <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Tên nhà cung cấp" required>
+                            <Form.Item name="tennhacungcap" noStyle label="Tên nhà cung cấp" rules={[{ required: true }]}>
+                                <Input disabled placeholder={val.tennhacungcap} />
+                            </Form.Item>
+                        </Form.Item>
+                    </Col>
+                    <Col span={12}>
+                        <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Email" required>
+                            <Form.Item name="emailncc" noStyle label="Email" rules={[{ required: true, type: 'email' }]}>
+                                <Input disabled placeholder={val.emailncc} />
+                            </Form.Item>
+                        </Form.Item>
+                    </Col>
+                    <Col span={12}>
+                        <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Số điện thoại" required>
+                            <Form.Item name="sdtncc" noStyle label="Số điện thoại" rules={[{ required: true, type: 'number' }]}>
+                                <InputNumber disabled style={{ width: '100%' }} placeholder={val.sdtncc} />
+                            </Form.Item>
+                        </Form.Item>
+                    </Col>
+                    <Col span={12}>
+                        <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Người đại diện" required>
+                            <Form.Item name="nguoidaidien" noStyle label="Người đại diện" rules={[{ required: true }]}>
+                                <Input disabled placeholder={val.nguoidaidien} />
                             </Form.Item>
                         </Form.Item>
                     </Col>

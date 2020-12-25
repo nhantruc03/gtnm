@@ -10,6 +10,7 @@ import danhsach from '../component/DonMuaHang/danhsach';
 import donmuahang from '../component/DonMuaHang/donmuahang';
 import lich from '../component/DonMuaHang/lich';
 import QuanLyMoiChaoGia from '../component/QuanLyMoiChaoGia/QuanLyMoiChaoGia';
+import Chotao from '../component/DonMuaHang/chotao';
 class router extends Component {
     render() {
         return (
@@ -22,6 +23,7 @@ class router extends Component {
                 <AppRoute exact path="/yeucaudoanhnghiep" component={YeuCauDoanhNghiep} layout={page} />
                 <AppRoute exact path="/themmoiyeucau-doanhnghiep" component={ThemMoiYeuCauDoanhNghiep} layout={page} />
 
+                <AppRoute exact path="/chotao" component={Chotao} layout={page} />
 
                 <AppRoute exact path="/danhsach-donmuahang" component={danhsach} layout={page} />
                 <AppRoute exact path="/donmuahang/:id" component={donmuahang} layout={page} />

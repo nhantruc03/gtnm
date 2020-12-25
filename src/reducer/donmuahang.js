@@ -1,67 +1,72 @@
-// import * as types from '../constants/ActionType';
+import * as types from '../constants/ActionType';
+
+
 // var data = JSON.parse(localStorage.getItem('CART'));
 var data = [
     {
-        key: 2,
-        ID: 2,
-        tieude: 'Vải may áo',
-        tendoanhnghiep: 32,
-        tensanpham: 'Vải gấm',
-        ngaynhanhang: '12/05/2020',
-        tags: ['Đã phê duyệt'],
-        tennguoidaidien: 'Nguyen Van A',
-        email: 'example@gmail.com',
-        chitiet: '1000 tấn',
-        ngaytao: '12/05/2020',
-        dondathang:['asdfasdfasdf','asdfasdfasdf'],
-        tinhtrang:2,
-        mota:'ABC',
-        sdt: '01231203',
-        soluong: '1000',
-        donvitinh: 'cái',
+        ID: 1,
+        chitiet: "1000 cái",
+        dongia: 10000,
+        donvitinh: "cái",
+        emailncc: "example@gmail.com",
+        key: 1,
+        ngaynhanhang: "12/2/2020",
+        ngaythanhtoan: "12/24/2020",
+        nguoidaidien: "Nguyễn Văn A",
+        nguoiphutrach: "Phạm Quang Nhân",
+        sdtncc: 123445,
+        soluong: 1000,
+        tags: ["Đã phê duyệt"],
+        tennhacungcap: "123",
+        tensanpham: "Bút bi Thiên Long",
+        tieude: "Văn phòng phẩm",
+        tinhtrang: 2,
+        tongtien: 10000000,
     },
     {
-        key: 5,
-        ID: 5,
-        tieude: 'Văn phòng phẩm',
-        tendoanhnghiep: 32,
-        tensanpham: 'Bút bi Thiên Long',
-        ngaynhanhang: '12/03/2020',
-        ngaytao: '12/03/2020',
-        tags: ['Đã phê duyệt'],
-        tennguoidaidien: 'Nguyen Van A',
-        email: 'example@gmail.com',
-        chitiet: '1000 tấn',
+        ID: 2,
+        chitiet: "900 cái",
+        dongia: 9000,
+        donvitinh: "cái",
+        emailncc: "example@gmail.com",
+        key: 2,
+        ngaynhanhang: "12/3/2020",
+        ngaythanhtoan: "12/25/2020",
+        nguoidaidien: "Nguyễn Văn A",
+        nguoiphutrach: "Phạm Quang Nhân",
+        sdtncc: 123445,
+        soluong: 900,
+        tags: ["Đã phê duyệt"],
+        tennhacungcap: "123",
+        tensanpham: "Bút bi Thiên Long",
+        tieude: "Văn phòng phẩm",
         tinhtrang: 3,
-        mota:'ABC',
-        sdt: '01231203',
-        soluong: '1000',
-        donvitinh: 'cái',
-    }
+        tongtien: 8100000,
+    },
+
 ];
 
 var inittialState = data ? data : [];
 const DONMUAHANG = (state = inittialState, action) => {
-    // var { YCMH } = action;
+    var { DMH } = action;
     switch (action.type) {
-        // case types.ADD_YCMH_DOANHNGHIEP:
-        //     var newId = findMaxId(state);
-        //     YCMH = { ...YCMH, key: newId, ID: newId, tags: ['Đang đợi phê duyệt'] }
-
-        //     state.push(
-        //         YCMH
-        //     )
-        //     return [...state];
+        case types.ADD_DONMUAHANG:
+            var newId = findMaxId(state);
+            DMH = { ...DMH, key: newId, ID: newId, tags: ['Đang đợi phê duyệt'] }
+            state.push(
+                DMH
+            )
+            return [...state];
         default: return [...state];
     }
 }
 
-// var findMaxId = (cart) => {
-//     if (cart.length > 0) {
-//         return cart.length + 1;
-//     }
-//     else {
-//         return 0;
-//     }
-// }
+var findMaxId = (cart) => {
+    if (cart.length > 0) {
+        return cart.length + 1;
+    }
+    else {
+        return 0;
+    }
+}
 export default DONMUAHANG;

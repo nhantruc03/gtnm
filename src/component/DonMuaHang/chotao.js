@@ -1,35 +1,31 @@
 import React, { Component } from 'react';
-import { Table, Tag, Row, Col } from 'antd';
+import { Table, Tag, Row, Col, Tooltip } from 'antd';
 import { Content } from 'antd/lib/layout/layout';
 import Title from 'antd/lib/typography/Title';
 import Search from '../search';
 import Subtable from '../subtable'
-import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 const columns = [
     {
         title: 'ID', dataIndex: 'ID', key: 'ID',
         sorter: (a, b) => a.ID - b.ID,
     },
     {
-        title: 'Nhà cung cấp', dataIndex: 'tennhacungcap', key: 'tennhacungcap',
-        sorter: (a, b) => a.tennhacungcap.length - b.tennhacungcap.length,
+        title: 'Tiêu đề', dataIndex: 'tieude', key: 'tieude',
+        sorter: (a, b) => a.tieude.length - b.tieude.length,
+    },
+    {
+        title: 'Doanh nghiệp', dataIndex: 'tendoanhnghiep', key: 'tendoanhnghiep',
+        sorter: (a, b) => a.tendoanhnghiep.length - b.tendoanhnghiep.length,
     },
     {
         title: 'Sản phẩm', dataIndex: 'tensanpham', key: 'tensanpham',
         sorter: (a, b) => a.tensanpham.length - b.tensanpham.length,
     },
     {
-        title: 'Số lượng', dataIndex: 'chitiet', key: 'chitiet',
-        sorter: (a, b) => a.soluong - b.soluong,
-    },
-    {
-        title: 'Đơn giá', dataIndex: 'dongia', key: 'dongia',
-        sorter: (a, b) => a.dongia - b.dongia,
-    },
-    {
-        title: 'Thành tiền', dataIndex: 'tongtien', key: 'tongtien',
-        sorter: (a, b) => a.tongtien - b.tongtien,
+        title: 'Ngày nhận', dataIndex: 'ngaynhanhang', key: 'ngaynhanhang',
+        sorter: (a, b) => new Date(a.ngaynhanhang).getTime()- new Date(b.ngaynhanhang).getTime(),
     },
     {
         title: 'tags',
@@ -61,16 +57,20 @@ const columns = [
         title: 'Hành động',
         dataIndex: 'ID',
         key: 'ID',
-        render: ID => <Link to={`/donmuahang/${ID}`}><img src="./edit.svg" alt="" /></Link>,
+        render: ID => (
+            <Tooltip placement="bottom" title='Tạo đơn đặt hàng'>
+                <Link to={`/donmuahang/${ID}`}><img src="./edit.svg" alt="" /></Link>
+            </Tooltip>
+        )
     },
 ];
 
 const sub_columns = [
     { title: 'ID', dataIndex: 'ID', key: 'ID' },
-    { title: 'Email', dataIndex: 'emailncc', key: 'emailncc' },
-    { title: 'Số điện thoại', dataIndex: 'sdtncc', key: 'sdtncc' },
-    { title: 'Ngày nhận', dataIndex: 'ngaynhanhang', key: 'ngaynhanhang' },
-    { title: 'Ngày thanh toán', dataIndex: 'ngaythanhtoan', key: 'ngaythanhtoan' },
+    { title: 'Người đại diện', dataIndex: 'tennguoidaidien', key: 'tennguoidaidien' },
+    { title: 'Liên hệ', dataIndex: 'email', key: 'email' },
+    { title: 'Chi tiết', dataIndex: 'chitiet', key: 'chitiet' },
+    { title: 'Ngày tạo', dataIndex: 'ngaytao', key: 'ngaytao' },
     {
         title: 'tags',
         dataIndex: 'tags',
@@ -101,26 +101,24 @@ const sub_columns = [
         title: 'Hành động',
         dataIndex: '',
         key: 'x',
-        render: ID => <Link to={`/donmuahang/${ID}`}><img src="./edit.svg" alt="" /></Link>,
+        render: () => <a href="/#"><img src="./edit.svg" alt="" /></a>,
     },
 ];
 
-class danhsach extends Component {
+class chotao extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: this.props.data,
-            SearchData: this.props.data,
+            SearchData: [],
+            data: [],
         }
     }
-
-    // componentDidMount() {
-    //     this.setState({
-    //         data: this.props.data.filter(e => e.tags.indexOf('Đã phê duyệt') > -1),
-    //         SearchData: this.props.data.filter(e => e.tags.indexOf('Đã phê duyệt') > -1),
-    //     })
-    // }
-
+    componentDidMount() {
+        this.setState({
+            data: this.props.data.filter(e => (e.tags.indexOf('Đã phê duyệt') > -1) && (e.dataodonhang === false)),
+            SearchData: this.props.data.filter(e => (e.tags.indexOf('Đã phê duyệt') > -1) && (e.dataodonhang === false)),
+        })
+    }
     getSearchData = (data) => {
         console.log(data)
         this.setState({
@@ -130,12 +128,11 @@ class danhsach extends Component {
     render() {
         return (
             <Content style={{ margin: '0 16px' }}>
-                <Title style={{ marginLeft: 30, color: '#002140', marginTop: 15 }} level={3}>Danh sách đơn mua hàng</Title>
-
+                <Title style={{ marginLeft: 30, color: '#002140', marginTop: 15 }} level={3}>Danh sách yêu cầu chờ tạo đơn hàng</Title>
 
                 <Row style={{ marginLeft: 30, marginRight: 30 }}>
                     <Col span={8}>
-                        <Search target="title" data={this.state.data} getSearchData={(e) => this.getSearchData(e)} />
+                        <Search target="tieude" data={this.state.data} getSearchData={(e) => this.getSearchData(e)} />
                     </Col>
                 </Row>
 
@@ -145,7 +142,7 @@ class danhsach extends Component {
                         columns={columns}
                         expandable={{
                             expandedRowRender: record =>
-                                <Subtable columns={sub_columns} data={record} renderStep={true} />
+                                <Subtable columns={sub_columns} data={record} />
                             ,
                             rowExpandable: record => record.name !== 'Not Expandable',
                         }}
@@ -156,11 +153,12 @@ class danhsach extends Component {
         );
     }
 }
-
 const mapStateToProps = state => {
     return {
-        data: state.DONMUAHANG
+        data: state.YCMH_PHONGBAN
     }
 }
 
-export default connect(mapStateToProps, null)(danhsach);
+export default connect(mapStateToProps, null)(chotao);
+
+

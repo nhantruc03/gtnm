@@ -15,6 +15,23 @@ export const act_Add_YCMH_DOANHNGHIEP = (YCMH) => {
     }
 }
 
+
+export const act_Add_DONMUAHANG = (DMH) => {
+    return {
+        type: types.ADD_DONMUAHANG,
+        DMH
+    }
+}
+
+export const act_EDIT_DATAODONMUAHANG = (YCMH) => {
+    return {
+        type: types.EDIT_DATAODONMUAHANG,
+        YCMH
+    }
+}
+
+
+
 // export const actDeleteFromCart = (product) => {
 //     return {
 //         type: types.DELETE_FROM_CART,

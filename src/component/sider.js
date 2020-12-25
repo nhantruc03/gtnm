@@ -33,19 +33,22 @@ class SiderDemo extends React.Component {
     render() {
         const { collapsed } = this.state;
         return (
-            <Sider width={250} collapsible collapsed={collapsed} onCollapse={this.onCollapse} style={{backgroundColor:'#002B6D'}}>
+            <Sider width={250} collapsible collapsed={collapsed} onCollapse={this.onCollapse} style={{ backgroundColor: '#002B6D' }}>
                 <Title className="logo" style={{ color: 'white', textAlign: 'center', marginTop: 15 }} level={3}>LOGO</Title>
-                <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" style={{backgroundColor:'#002B6D'}}>
+                <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" style={{ backgroundColor: '#002B6D' }}>
                     <SubMenu key="sub1" icon={<FormOutlined />} title="Quản lý yêu cầu mua hàng">
                         <Menu.Item key="3">
-                            <Link to="/yeucauphongban" className="nav-text">Yêu cầu phòng ban</Link>
+                            <Link to="/yeucauphongban" className="nav-text">Yêu cầu mua hàng</Link>
                         </Menu.Item>
-                        <Menu.Item key="4">
+                        {/* <Menu.Item key="4">
                             <Link to="/yeucaudoanhnghiep" className="nav-text">Yêu cầu doanh nghiệp</Link>
-                        </Menu.Item>
+                        </Menu.Item> */}
                     </SubMenu>
                     <SubMenu key="sub2" icon={<CopyOutlined />} title="Quản lý đơn mua hàng">
                         <Menu.Item key="6">
+                            <Link to="/chotao">Chờ tạo</Link>
+                        </Menu.Item>
+                        <Menu.Item key="7">
                             <Link to="/danhsach-donmuahang">Danh sách</Link>
                         </Menu.Item>
                         <Menu.Item key="8">

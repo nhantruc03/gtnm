@@ -41,13 +41,13 @@ const validateMessages = {
     required: 'Cần nhập ${label}!',
     types: {
         // eslint-disable-next-line
-        email: '${label} không hợp lệ!',
+        email: '${label} phải thuộc dạng xxx@gxxx.xxx!',
         // eslint-disable-next-line
-        number: '${label} không hợp lệ!',
+        number: '${label} phải là số!',
     },
     number: {
         // eslint-disable-next-line
-        range: '${label} must be between ${min} and ${max}',
+        range: '${label} phải thuộc khoảng ${min} và ${max}',
     },
 };
 const temp = `< Yêu cầu phòng ban`

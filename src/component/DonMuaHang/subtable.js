@@ -45,11 +45,10 @@ class subtable extends Component {
     renderLink = () => {
         if (this.props.data.dondathang !== undefined) {
             return (
-                this.props.data.dondathang.map(e => {
+                this.props.data.dondathang.map((e,i) => {
                     return (
-                        <li key={e}>
+                        <li key={i}>
                             <a href="/#">{e}</a>
-                            {/* <link></link>{} */}
                         </li>
                     );
                 })
@@ -79,20 +78,15 @@ class subtable extends Component {
                                             <tr data-row-key={1} className="ant-table-row ant-table-row-level-0">
                                                 <td className="ant-table-cell invisible">1</td>
                                                 <td className="ant-table-cell sub"><strong>{this.props.columns[1].title}</strong><br />{this.props.data[this.props.columns[1].key]}</td>
-                                                <td className="ant-table-cell sub"><strong>{this.props.columns[2].title}</strong><br />{this.props.data[this.props.columns[2].key]}</td>
-                                                <td className="ant-table-cell sub"><strong>{this.props.columns[3].title}</strong><br />{this.props.data[this.props.columns[3].key]}</td>
-                                                <td className="ant-table-cell sub"><strong>{this.props.columns[4].title}</strong><br />{this.props.data[this.props.columns[4].key]}</td>
+                                                <td className="ant-table-cell sub"><strong>{this.props.columns[2].title}</strong><br />{this.props.data.chitiet}</td>
+                                                <td className="ant-table-cell sub"><strong>{this.props.columns[3].title}</strong><br />{this.props.data.dongia}</td>
+                                                <td className="ant-table-cell sub"><strong>{this.props.columns[4].title}</strong><br />{this.props.data.thue}</td>
                                                 <td className={`ant-table-cell sub ${this.state.hasLink}`}>
                                                     <strong>Đơn đặt hàng</strong><br />
                                                     <ul>
                                                         {this.renderLink()}
                                                     </ul>
                                                 </td>
-                                                {/* <td className="ant-table-cell invisible">
-                                                    <span>
-                                                        <span className="ant-tag yellow">ĐANG ĐỢI PHÊ DUYỆT</span>
-                                                    </span>
-                                                </td> */}
                                                 <td className="ant-table-cell invisible">
                                                     <a href="/#"><img src="./edit.svg" alt="" /></a>
                                                 </td>

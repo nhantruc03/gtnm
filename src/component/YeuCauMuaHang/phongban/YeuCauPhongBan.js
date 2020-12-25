@@ -99,11 +99,11 @@ class YeuCauPhongBan extends Component {
             SearchData: data
         })
     }
+    
     render() {
         return (
             <Content style={{ margin: '0 16px' }}>
                 <Title style={{ marginLeft: 30, color: '#002140', marginTop: 15 }} level={3}>Yêu cầu phòng ban</Title>
-
 
                 <Row style={{ marginLeft: 30, marginRight: 30 }}>
                     <Col span={8}>

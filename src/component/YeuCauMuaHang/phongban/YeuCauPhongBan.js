@@ -132,7 +132,7 @@ class YeuCauPhongBan extends Component {
 
                 <Row style={{ marginLeft: 30, marginRight: 30 }}>
                     <Col span={8}>
-                        <Search target="tieude" data={this.props.data} getSearchData={(e) => this.getSearchData(e)} />
+                        <Search columns={columns} target="tieude" data={this.props.data} getSearchData={(e) => this.getSearchData(e)} />
                     </Col>
                     <Col span={16}>
                         <Button className="add" style={{ float: "right" }} >

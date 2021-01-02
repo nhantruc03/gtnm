@@ -135,7 +135,7 @@ class danhsach extends Component {
 
                 <Row style={{ marginLeft: 30, marginRight: 30 }}>
                     <Col span={8}>
-                        <Search target="title" data={this.state.data} getSearchData={(e) => this.getSearchData(e)} />
+                        <Search columns={columns} target="title" data={this.state.data} getSearchData={(e) => this.getSearchData(e)} />
                     </Col>
                 </Row>
 

@@ -1,3 +1,4 @@
+import { Col, Row } from 'antd';
 import Search from 'antd/lib/input/Search';
 import React, { Component } from 'react';
 import Select from 'react-select';
@@ -45,12 +46,21 @@ class s extends Component {
     render() {
         return (
             <div>
-                <Search placeholder="Tìm kiếm" style={{ marginBottom: 15, borderTopLeftRadius: '10px' }} onChange={(e) => this.onChange(e)}></Search>
-                <Select
-                    name="Options"
-                    onChange={(e) => this.onSelect(e)}
-                    options={Options}
-                />
+                <Row>
+                    <Col span={12}>
+                        <Search placeholder="Tìm kiếm" style={{ marginBottom: 15, borderTopLeftRadius: '10px' }} onChange={(e) => this.onChange(e)}></Search>
+
+                    </Col>
+                    <Col span={12}>
+                        <Select
+                            name="Options"
+                            onChange={(e) => this.onSelect(e)}
+                            options={Options}
+                        />
+                    </Col>
+
+                </Row>
+
             </div>
 
         );

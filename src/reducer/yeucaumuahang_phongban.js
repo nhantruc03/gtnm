@@ -22,6 +22,7 @@ var data = [
         soluong: '1000',
         donvitinh: 'cái',
         dataodonhang: false,
+        ghichu:''
     },
     {
         key: 2,
@@ -42,6 +43,7 @@ var data = [
         soluong: 1000,
         donvitinh: 'cái',
         dataodonhang: false,
+        ghichu:''
     },
     {
         key: 3,
@@ -61,6 +63,7 @@ var data = [
         soluong: '1000',
         donvitinh: 'cái',
         dataodonhang: false,
+        ghichu:''
     },
 ];
 

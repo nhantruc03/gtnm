@@ -88,11 +88,6 @@ class subtable extends Component {
                                                         {this.renderLink()}
                                                     </ul>
                                                 </td>
-                                                {/* <td className="ant-table-cell invisible">
-                                                    <span>
-                                                        <span className="ant-tag yellow">ĐANG ĐỢI PHÊ DUYỆT</span>
-                                                    </span>
-                                                </td> */}
                                                 <td className="ant-table-cell invisible">
                                                     <a href="/#"><img src="./edit.svg" alt="" /></a>
                                                 </td>

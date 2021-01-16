@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Calendar, Row, Col, Tag, Modal, Input, InputNumber } from 'antd';
+import { Form, Calendar, Row, Col, Tag, Modal} from 'antd';
 import Title from 'antd/lib/typography/Title';
 import { Content } from 'antd/lib/layout/layout';
 import { connect } from 'react-redux';
@@ -9,20 +9,6 @@ const formItemLayout = {
     },
     wrapperCol: {
         span: 14,
-    },
-};
-const validateMessages = {
-    // eslint-disable-next-line
-    required: 'Cần nhập ${label}!',
-    types: {
-        // eslint-disable-next-line
-        email: '${label} không hợp lệ!',
-        // eslint-disable-next-line
-        number: '${label} không hợp lệ!',
-    },
-    number: {
-        // eslint-disable-next-line
-        range: '${label} must be between ${min} and ${max}',
     },
 };
 class lich extends Component {
@@ -95,6 +81,7 @@ class lich extends Component {
     }
 
     setModal2Visible(modal2Visible, val) {
+        
         this.setState({ modal2Visible });
         if (val !== undefined) {
             var temp = this.props.data.find(e => e.ID === val)
@@ -117,108 +104,81 @@ class lich extends Component {
                 {...formItemLayout}
                 onFinish={(e) => this.onFinish(e)}
                 layout="vertical"
-                validateMessages={validateMessages}
                 defaultValue={val}
             >
-
                 <Row>
                     <Col span={24}>
-                        <Title>Thông tin đơn hàng</Title>
+                        <Title>Chi tiết đơn đặt hàng</Title>
                     </Col>
-                    <Col span={5}>
-                        <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Mã đơn hàng" required>
-                            <Form.Item name="ID" label="Mã đơn hàng" rules={[{ required: true }]} noStyle>
-                                <Input disabled placeholder={val.ID} />
-                            </Form.Item>
+                    <Col span={12}>
+                        <Form.Item wrapperCol={{ sm: 24 }} label="Mã đơn hàng" >
+                            <p>{val.ID}</p>
                         </Form.Item>
                     </Col>
-                    <Col span={11}>
-                        <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Người phụ trách" required>
-                            <Form.Item name="nguoiphutrach" noStyle label="Người phụ trách" rules={[{ required: true }]}>
-                                <Input disabled placeholder={val.nguoiphutrach} />
-                            </Form.Item>
+                    <Col span={12}>
+                        <Form.Item wrapperCol={{ sm: 24 }} label="Người phụ trách" >
+                            <p>{val.nguoiphutrach}</p>
                         </Form.Item>
                     </Col>
-                    <Col span={8}>
-                        <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Tên hàng" required>
-                            <Form.Item name="tensanpham" noStyle label="Tên hàng" rules={[{ required: true }]}>
-                                <Input disabled placeholder={val.tensanpham} />
-                            </Form.Item>
+                    <Col span={12}>
+                        <Form.Item wrapperCol={{ sm: 24 }} label="Tên hàng" >
+                            <p>{val.tensanpham}</p>
                         </Form.Item>
                     </Col>
 
-                    <Col span={4}>
-                        <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Số lượng" required>
-                            <Form.Item name="soluong" noStyle label="Số lượng" rules={[{ required: true, type: 'number' }]}>
-                                <InputNumber disabled style={{ width: '100%' }} placeholder={val.soluong} />
-                            </Form.Item>
-                        </Form.Item>
-                    </Col>
-                    <Col span={4}>
-                        <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Đơn vị tính" required>
-                            <Form.Item name="donvitinh" noStyle label="Đơn vị tính" rules={[{ required: true }]}>
-                                <Input disabled placeholder={val.donvitinh} />
-                            </Form.Item>
+                 
+                    <Col span={12}>
+                        <Form.Item wrapperCol={{ sm: 24 }} label="Đơn vị tính" >
+                            <p>{val.donvitinh}</p>
                         </Form.Item>
                     </Col>
                     <Col span={8}>
-                        <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Đơn giá" required>
-                            <Form.Item name="dongia" noStyle label="Đơn giá" rules={[{ required: true, type: 'number' }]}>
-                                <InputNumber disabled style={{ width: '100%' }} placeholder={val.dongia} />
-                            </Form.Item>
+                        <Form.Item wrapperCol={{ sm: 24 }} label="Số lượng" >
+                            <p>{val.soluong}</p>
                         </Form.Item>
                     </Col>
                     <Col span={8}>
-                        <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Tổng tiền" required>
-                            <Form.Item name="tongtien" noStyle label="Tổng tiền" rules={[{ required: true, type: 'number' }]}>
-                                <InputNumber disabled style={{ width: '100%' }} placeholder={val.tongtien} />
-                            </Form.Item>
+                        <Form.Item wrapperCol={{ sm: 24 }} label="Đơn giá" >
+                            <p>{val.dongia}</p>
+                        </Form.Item>
+                    </Col>
+                    <Col span={8}>
+                        <Form.Item wrapperCol={{ sm: 24 }} label="Tổng tiền" >
+                            <p>{val.tongtien}</p>
                         </Form.Item>
                     </Col>
 
                     <Col span={12}>
-                        <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Ngày nhận" required>
-                            <Form.Item name="ngaynhanhang" label="Ngày Nhận" noStyle rules={[{ required: true }]}>
-                                <Input disabled placeholder={val.ngaynhanhang} />
-                            </Form.Item>
+                        <Form.Item wrapperCol={{ sm: 24 }} label="Ngày nhận" >
+                            <p>{val.ngaynhanhang}</p>
                         </Form.Item>
                     </Col>
                     <Col span={12}>
-                        <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Ngày thanh toán" required>
-                            <Form.Item name="ngaythanhtoan" label="Ngày thanh toán" noStyle rules={[{ required: true }]}>
-                                <Input disabled placeholder={val.ngaythanhtoan} />
-                            </Form.Item>
+                        <Form.Item wrapperCol={{ sm: 24 }} label="Ngày thanh toán" >
+                            <p>{val.ngaythanhtoan}</p>
                         </Form.Item>
                     </Col>
                     <Col span={24}>
                         <Title>Thông tin nhà cung cấp</Title>
                     </Col>
                     <Col span={12}>
-                        <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Tên nhà cung cấp" required>
-                            <Form.Item name="tennhacungcap" noStyle label="Tên nhà cung cấp" rules={[{ required: true }]}>
-                                <Input disabled placeholder={val.tennhacungcap} />
-                            </Form.Item>
+                        <Form.Item wrapperCol={{ sm: 24 }} label="Tên nhà cung cấp" >
+                            <p>{val.tennhacungcap}</p>
                         </Form.Item>
                     </Col>
                     <Col span={12}>
-                        <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Email" required>
-                            <Form.Item name="emailncc" noStyle label="Email" rules={[{ required: true, type: 'email' }]}>
-                                <Input disabled placeholder={val.emailncc} />
-                            </Form.Item>
+                        <Form.Item wrapperCol={{ sm: 24 }} label="Email" >
+                            <p>{val.emailncc}</p>
                         </Form.Item>
                     </Col>
                     <Col span={12}>
-                        <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Số điện thoại" required>
-                            <Form.Item name="sdtncc" noStyle label="Số điện thoại" rules={[{ required: true, type: 'number' }]}>
-                                <InputNumber disabled style={{ width: '100%' }} placeholder={val.sdtncc} />
-                            </Form.Item>
+                        <Form.Item wrapperCol={{ sm: 24 }} label="Số điện thoại" >
+                            <p>{val.sdtncc}</p>
                         </Form.Item>
                     </Col>
                     <Col span={12}>
-                        <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Người đại diện" required>
-                            <Form.Item name="nguoidaidien" noStyle label="Người đại diện" rules={[{ required: true }]}>
-                                <Input disabled placeholder={val.nguoidaidien} />
-                            </Form.Item>
+                        <Form.Item wrapperCol={{ sm: 24 }} label="Người đại diện" >
+                            <p>{val.nguoidaidien}</p>
                         </Form.Item>
                     </Col>
                 </Row>
@@ -247,6 +207,7 @@ class lich extends Component {
                     onOk={() => this.setModal2Visible(false)}
                     onCancel={() => this.setModal2Visible(false)}
                     width='50%'
+                    footer={false}
                 >
                     {this.renderModel(this.state.model)}
                 </Modal>

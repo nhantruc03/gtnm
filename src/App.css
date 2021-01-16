@@ -263,7 +263,27 @@ ul.events {
   visibility: visible;
   border: 2px solid white;
 } */
-
+.ant-modal-content {
+    border-radius: 10px;
+}
+.ant-modal-header {
+    border-radius: 10px 10px 0 0;
+}
+label {
+    color: #555555!important;
+    font-family: Open Sans !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-size: 20px !important;
+    line-height: 140% !important;
+}
+p{
+    font-family: Open Sans !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-size: 20px !important;
+    line-height: 140% !important;
+}
 input[type='radio']:checked:after {
     width: 15px;
     height: 15px;
@@ -277,7 +297,14 @@ input[type='radio']:checked:after {
     visibility: visible;
     border: 2px solid white;
 }
-
+h1.ant-typography, .ant-modal-title {
+    color: #002B6D !important;
+    font-family: Open Sans !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    font-size: 25px !important;
+    line-height: 140% !important;
+}
 p.ncc_label {
     font-family: Open Sans;
     font-style: normal;

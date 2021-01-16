@@ -44,31 +44,34 @@ class donmuahang extends Component {
         super(props);
         this.state = {
             data: {
-                key: 2,
-                ID: 2,
-                tieude: '',
-                tendoanhnghiep: '',
-                tensanpham: '',
-                ngaynhanhang: '',
-                tags: [''],
-                tennguoidaidien: '',
-                email: '',
-                chitiet: '',
-                ngaytao: '',
-                dondathang: [''],
-                tinhtrang: 0,
-                mota: '',
-                sdt: '',
-                soluong: '',
-                donvitinh: '',
-                dataodonhang: false,
+                ID: 1,
+                chitiet: "1000 cái",
+                dongia: 10000,
+                donvitinh: "cái",
+                emailncc: "example@gmail.com",
+                key: 1,
+                ngaynhanhang: '12/03/2020',
+                ngaythanhtoan: '12/03/2020',
+                nguoidaidien: "Nguyễn Văn A",
+                nguoiphutrach: "Phạm Quang Nhân",
+                sdtncc: 123445,
+                soluong: 1000,
+                tags: ["Đã phê duyệt"],
+                tennhacungcap: "123",
+                tensanpham: "Bút bi Thiên Long",
+                tieude: "Văn phòng phẩm",
+                tinhtrang: 2,
+                tongtien: 10000000,
+                ngaynhanhang_O:{},
             }
         }
     }
 
     componentDidMount() {
         var temp = this.props.data.find(e => Number(e.ID) === Number(this.props.match.params.id))
-        temp.ngaynhanhang = moment(temp.ngaynhanhang)
+        console.log(temp)
+        var temp_date = temp.ngaynhanhang
+        temp.ngaynhanhang_O = moment(temp_date)
         console.log(temp)
         this.setState({
             data: temp
@@ -81,10 +84,10 @@ class donmuahang extends Component {
         this.props.history.goBack();
     }
     onFinish = (values) => {
+        console.log('on finish')
+        var ngaynhanhang = new Date(values.ngaynhanhang_O.toString()).toLocaleDateString();
 
-        var ngaynhanhang = new Date(values.ngaynhanhang.toString()).toLocaleDateString();
-
-        var ngaythanhtoan = new Date(values.ngaythanhtoan.toString()).toLocaleDateString();
+        var ngaythanhtoan = new Date(values.ngaynhanhang_O.toString()).toLocaleDateString();
         values.ngaynhanhang = ngaynhanhang;
         values.ngaythanhtoan = ngaythanhtoan;
         values.key = values.ID;
@@ -117,6 +120,7 @@ class donmuahang extends Component {
                     <Form ref={this.formRef}
                         name="validate_other"
                         {...formItemLayout}
+                        
                         onFinish={(e) => this.onFinish(e)}
                         layout="vertical"
                         validateMessages={validateMessages}
@@ -179,7 +183,7 @@ class donmuahang extends Component {
 
                             <Col span={12}>
                                 <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Ngày nhận" required>
-                                    <Form.Item name="ngaynhanhang" label="Ngày Nhận" noStyle rules={[{ required: true }]}>
+                                    <Form.Item name="ngaynhanhang_O" label="Ngày Nhận" noStyle rules={[{ required: true }]}>
                                         <DatePicker placeholder="Chọn ngày" />
                                     </Form.Item>
                                 </Form.Item>

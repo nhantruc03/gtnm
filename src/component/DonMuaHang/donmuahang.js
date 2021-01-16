@@ -87,7 +87,7 @@ class donmuahang extends Component {
         console.log('on finish')
         var ngaynhanhang = new Date(values.ngaynhanhang_O.toString()).toLocaleDateString();
 
-        var ngaythanhtoan = new Date(values.ngaynhanhang_O.toString()).toLocaleDateString();
+        var ngaythanhtoan = new Date(values.ngaythanhtoan.toString()).toLocaleDateString();
         values.ngaynhanhang = ngaynhanhang;
         values.ngaythanhtoan = ngaythanhtoan;
         values.key = values.ID;

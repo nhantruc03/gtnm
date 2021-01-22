@@ -26,12 +26,12 @@ class drawer_item extends Component {
                     </Col>
                     <Col span={12}>
                         <div>
-                            <p className="ncc_label">Tên <span className="ncc_content">TNHH ABC</span></p>
-                            <p className="ncc_label">Sđt <span className="ncc_content">123456789</span></p>
-                            <p className="ncc_label">Email <span className="ncc_content">Example@gmail.com</span></p>
-                            <p className="ncc_label">Website <span className="ncc_content">Example.com</span></p>
+                            <p className="ncc_label special">Tên <span className="ncc_content">TNHH ABC</span></p>
+                            <p className="ncc_label special">Sđt <span className="ncc_content">123456789</span></p>
+                            <p className="ncc_label special">Email <span className="ncc_content">Example@gmail.com</span></p>
+                            <p className="ncc_label special">Website <span className="ncc_content">Example.com</span></p>
                             <div style={{ float: 'right' }}>
-                                <p className="ncc_label">Báo giá <span className="ncc_content">30.000.000 VNĐ</span></p>
+                                <p className="ncc_label special">Báo giá <span className="ncc_content">30.000.000 VNĐ</span></p>
                             </div>
                         </div>
                     </Col>

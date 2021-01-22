@@ -47,11 +47,11 @@ class s extends Component {
         return (
             <div>
                 <Row>
-                    <Col span={12}>
+                    <Col xs={24} xl={12} span={12}>
                         <Search placeholder="Tìm kiếm" style={{ marginBottom: 15, borderTopLeftRadius: '10px' }} onChange={(e) => this.onChange(e)}></Search>
 
                     </Col>
-                    <Col span={12}>
+                    <Col xs={24} xl={12} span={12}>
                         <Select
                             name="Options"
                             onChange={(e) => this.onSelect(e)}

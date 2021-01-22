@@ -98,8 +98,8 @@ class ChaoGia_item extends Component {
 
     render() {
         return (
-            <Col span={12} style={{ padding: 50 }}>
-                <div style={{ width: '100%', height: '300px', borderRadius: '6px', backgroundColor: "white", padding: 30 }}>
+            <Col xs={24} xl={12} span={12} style={{ padding: 50 }}>
+                <div style={{ width: '100%', borderRadius: '6px', backgroundColor: "white", padding: 30 }}>
                     <Row>
                         <Col span={14}>
                             <Title>Cung cấp vải gấm</Title>
@@ -110,16 +110,16 @@ class ChaoGia_item extends Component {
                             </Tag>
                         </Col>
                     </Row>
-                    <p style={{ color: 'grey' }}>Chào giá cạnh tranh</p>
-                    <p style={{ color: 'grey' }}>Thời gian nộp chào giá: 30/04/2020</p>
-                    <p>Đã có <span style={{ color: '#184A97', fontWeight: 'bold' }}>3 nhà</span> cung cấp vào chào giá</p>
+                    <p className="special" style={{ color: 'grey' }}>Chào giá cạnh tranh</p>
+                    <p className="special" style={{ color: 'grey' }}>Thời gian nộp chào giá: 30/04/2020</p>
+                    <p className="special">Đã có <span style={{ color: '#184A97', fontWeight: 'bold' }}>3 nhà</span> cung cấp vào chào giá</p>
                     <Row>
-                        <Col span={14}>
+                        <Col xs={24} xl={14} span={14}>
                             {this.renderAvatar(this.state.data)}
                             <Avatar style={{ marginRight: '10px' }} size={45} src='./Plus.png'>USER</Avatar>
                         </Col>
-                        <Col span={10}>
-                            <Button onClick={() => this.showDrawer()} className="back" style={{ width: 200, float: "right" }}>Xem chi tiết</Button>
+                        <Col xs={24} xl={10} span={10}>
+                            <Button onClick={() => this.showDrawer()} className="back" style={{ width: '100%', float: "right" }}>Xem chi tiết</Button>
                         </Col>
                     </Row>
                 </div>

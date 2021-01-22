@@ -169,27 +169,27 @@ class YeuCauPhongBan extends Component {
 
                 <Row>
                     <Col span={24}>
-                        <Title>Thông tin khách hàng</Title>
+                        <Title >Thông tin khách hàng</Title>
                     </Col>
                     <Col span={12}>
                         <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Tên người đại diện">
-                            <p>{val.tennguoidaidien}</p>
+                            <p className="special">{val.tennguoidaidien}</p>
                         </Form.Item>
                     </Col>
                     <Col span={12}>
                         <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Tên doanh nghiệp">
-                            <p>{val.tendoanhnghiep}</p>
+                            <p className="special">{val.tendoanhnghiep}</p>
                         </Form.Item>
                     </Col>
                     <Col span={12}>
                         <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Email">
-                            <p>{val.email}</p>
+                            <p className="special">{val.email}</p>
                         </Form.Item>
                     </Col>
 
                     <Col span={12}>
                         <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Số điện thoại" >
-                            <p>{val.sdt}</p>
+                            <p className="special">{val.sdt}</p>
                         </Form.Item>
                     </Col>
 
@@ -198,27 +198,27 @@ class YeuCauPhongBan extends Component {
                     </Col>
                     <Col span={12}>
                         <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Tên sản phẩm">
-                            <p>{val.tensanpham}</p>
+                            <p className="special">{val.tensanpham}</p>
                         </Form.Item>
                     </Col>
                     <Col span={12}>
                         <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Ngày nhận hàng">
-                            <p>{val.ngaynhanhang}</p>
+                            <p className="special">{val.ngaynhanhang}</p>
                         </Form.Item>
                     </Col>
                     <Col span={12}>
                         <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Số lượng">
-                            <p>{val.soluong}</p>
+                            <p className="special">{val.soluong}</p>
                         </Form.Item>
                     </Col>
                     <Col span={12}>
                         <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Đơn vị tính">
-                            <p>{val.donvitinh}</p>
+                            <p className="special">{val.donvitinh}</p>
                         </Form.Item>
                     </Col>
                     <Col span={12}>
                         <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Ghi chú">
-                            <p>{val.ghichu}</p>
+                            <p className="special">{val.ghichu}</p>
                         </Form.Item>
                     </Col>
                     <Col span={12}>
@@ -242,10 +242,10 @@ class YeuCauPhongBan extends Component {
                 <Title style={{ marginLeft: 30, color: '#002140', marginTop: 15 }} level={3}>Yêu cầu phòng ban</Title>
 
                 <Row style={{ marginLeft: 30, marginRight: 30 }}>
-                    <Col span={8}>
+                    <Col span={12}>
                         <Search columns={this.state.columns} target="tieude" data={this.props.data} getSearchData={(e) => this.getSearchData(e)} />
                     </Col>
-                    <Col span={16}>
+                    <Col span={12}>
                         <Button className="add" style={{ float: "right" }} >
                             <Link to='/themmoiyeucau'>Thêm yêu cầu</Link>
                         </Button>

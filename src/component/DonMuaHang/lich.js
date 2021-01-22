@@ -112,50 +112,50 @@ class lich extends Component {
                     </Col>
                     <Col span={12}>
                         <Form.Item wrapperCol={{ sm: 24 }} label="Mã đơn hàng" >
-                            <p>{val.ID}</p>
+                            <p className="special">{val.ID}</p>
                         </Form.Item>
                     </Col>
                     <Col span={12}>
                         <Form.Item wrapperCol={{ sm: 24 }} label="Người phụ trách" >
-                            <p>{val.nguoiphutrach}</p>
+                            <p className="special">{val.nguoiphutrach}</p>
                         </Form.Item>
                     </Col>
                     <Col span={12}>
                         <Form.Item wrapperCol={{ sm: 24 }} label="Tên hàng" >
-                            <p>{val.tensanpham}</p>
+                            <p className="special">{val.tensanpham}</p>
                         </Form.Item>
                     </Col>
 
                  
                     <Col span={12}>
                         <Form.Item wrapperCol={{ sm: 24 }} label="Đơn vị tính" >
-                            <p>{val.donvitinh}</p>
+                            <p className="special">{val.donvitinh}</p>
                         </Form.Item>
                     </Col>
                     <Col span={8}>
                         <Form.Item wrapperCol={{ sm: 24 }} label="Số lượng" >
-                            <p>{val.soluong}</p>
+                            <p className="special">{val.soluong}</p>
                         </Form.Item>
                     </Col>
                     <Col span={8}>
                         <Form.Item wrapperCol={{ sm: 24 }} label="Đơn giá" >
-                            <p>{val.dongia}</p>
+                            <p className="special">{val.dongia}</p>
                         </Form.Item>
                     </Col>
                     <Col span={8}>
                         <Form.Item wrapperCol={{ sm: 24 }} label="Tổng tiền" >
-                            <p>{val.tongtien}</p>
+                            <p className="special">{val.tongtien}</p>
                         </Form.Item>
                     </Col>
 
                     <Col span={12}>
                         <Form.Item wrapperCol={{ sm: 24 }} label="Ngày nhận" >
-                            <p>{val.ngaynhanhang}</p>
+                            <p className="special">{val.ngaynhanhang}</p>
                         </Form.Item>
                     </Col>
                     <Col span={12}>
                         <Form.Item wrapperCol={{ sm: 24 }} label="Ngày thanh toán" >
-                            <p>{val.ngaythanhtoan}</p>
+                            <p className="special">{val.ngaythanhtoan}</p>
                         </Form.Item>
                     </Col>
                     <Col span={24}>
@@ -163,22 +163,22 @@ class lich extends Component {
                     </Col>
                     <Col span={12}>
                         <Form.Item wrapperCol={{ sm: 24 }} label="Tên nhà cung cấp" >
-                            <p>{val.tennhacungcap}</p>
+                            <p className="special">{val.tennhacungcap}</p>
                         </Form.Item>
                     </Col>
                     <Col span={12}>
                         <Form.Item wrapperCol={{ sm: 24 }} label="Email" >
-                            <p>{val.emailncc}</p>
+                            <p className="special">{val.emailncc}</p>
                         </Form.Item>
                     </Col>
                     <Col span={12}>
                         <Form.Item wrapperCol={{ sm: 24 }} label="Số điện thoại" >
-                            <p>{val.sdtncc}</p>
+                            <p className="special">{val.sdtncc}</p>
                         </Form.Item>
                     </Col>
                     <Col span={12}>
                         <Form.Item wrapperCol={{ sm: 24 }} label="Người đại diện" >
-                            <p>{val.nguoidaidien}</p>
+                            <p className="special">{val.nguoidaidien}</p>
                         </Form.Item>
                     </Col>
                 </Row>

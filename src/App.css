@@ -248,26 +248,19 @@ ul.events {
     position: relative;
     overflow: hidden;
 }
-
-
-/* input[type='radio']:after {
-  width: 15px;
-  height: 15px;
-  border-radius: 15px;
-  top: -2px;
-  left: -1px;
-  position: relative;
-  background-color: #d1d3d1;
-  content: '';
-  display: inline-block;
-  visibility: visible;
-  border: 2px solid white;
-} */
+.dropdown {
+    max-height: 450px;
+    overflow-y: scroll;
+}
 .ant-modal-content {
     border-radius: 10px;
 }
 .ant-modal-header {
     border-radius: 10px 10px 0 0;
+}
+.css-yk16xz-control {
+    height: 40px;
+    border-radius: 6px;
 }
 label {
     color: #555555!important;
@@ -277,7 +270,8 @@ label {
     font-size: 20px !important;
     line-height: 140% !important;
 }
-p{
+
+p.special{
     font-family: Open Sans !important;
     font-style: normal !important;
     font-weight: normal !important;
@@ -288,7 +282,7 @@ input[type='radio']:checked:after {
     width: 15px;
     height: 15px;
     border-radius: 15px;
-    top: -2px;
+    top: -7px;
     left: -1px;
     position: relative;
     background-color: #184A97;

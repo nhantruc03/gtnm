@@ -83,9 +83,6 @@ class danhsach extends Component {
                             <Tooltip placement="bottom" title='Xem'>
                                 <a href="/#" onClick={(e) => { e.preventDefault(); this.setModal2Visible(true, ID) }}><img src="./View.png" alt="" /></a>
                             </Tooltip>
-                            {/* <Tooltip placement="bottom" title='Tạo đơn đặt hàng'>
-                                < Link to={`/donmuahang/${ID.ID}`} > <img src="./edit.svg" alt="" /></Link >
-                            </Tooltip> */}
                         </div>,
                 },
             ],
@@ -131,13 +128,6 @@ class danhsach extends Component {
         }
     }
 
-    // componentDidMount() {
-    //     this.setState({
-    //         data: this.props.data.filter(e => e.tags.indexOf('Đã phê duyệt') > -1),
-    //         SearchData: this.props.data.filter(e => e.tags.indexOf('Đã phê duyệt') > -1),
-    //     })
-    // }
-
     getSearchData = (data) => {
         console.log(data)
         this.setState({
@@ -179,43 +169,43 @@ class danhsach extends Component {
                     </Col>
                     <Col span={12}>
                         <Form.Item wrapperCol={{ sm: 24 }} label="Mã đơn hàng">
-                            <p>{val.ID}</p>
+                            <p className="special">{val.ID}</p>
                         </Form.Item>
                     </Col>
                     <Col span={12}>
                         <Form.Item wrapperCol={{ sm: 24 }} label="Người phụ trách">
-                            <p>{val.nguoiphutrach}</p>
+                            <p className="special">{val.nguoiphutrach}</p>
                         </Form.Item>
                     </Col>
                     <Col span={12}>
                         <Form.Item wrapperCol={{ sm: 24 }} label="Tên hàng">
-                            <p>{val.tensanpham}</p>
+                            <p className="special">{val.tensanpham}</p>
                         </Form.Item>
                     </Col>
 
                     <Col span={12}>
                         <Form.Item wrapperCol={{ sm: 24 }} label="Số lượng" >
-                            <p>{val.soluong}</p>
+                            <p className="special">{val.soluong}</p>
                         </Form.Item>
                     </Col>
                     <Col span={12}>
                         <Form.Item wrapperCol={{ sm: 24 }} label="Đơn giá" >
-                            <p>{val.dongia}</p>
+                            <p className="special">{val.dongia}</p>
                         </Form.Item>
                     </Col>
                     <Col span={12}>
                         <Form.Item wrapperCol={{ sm: 24 }} label="Thành tiền" >
-                            <p>{val.thanhtien}</p>
+                            <p className="special">{val.thanhtien}</p>
                         </Form.Item>
                     </Col>
                     <Col span={12}>
                         <Form.Item wrapperCol={{ sm: 24 }} label="Ngày nhận hàng" >
-                            <p>{val.ngaynhanhang}</p>
+                            <p className="special">{val.ngaynhanhang}</p>
                         </Form.Item>
                     </Col>
                     <Col span={12}>
                         <Form.Item wrapperCol={{ sm: 24 }} label="Thanh toán" >
-                            <p>{val.ngaythanhtoan}</p>
+                            <p className="special">{val.ngaythanhtoan}</p>
                         </Form.Item>
                     </Col>
 
@@ -224,22 +214,22 @@ class danhsach extends Component {
                     </Col>
                     <Col span={12}>
                         <Form.Item wrapperCol={{ sm: 24 }} label="Nhà cung cấp">
-                            <p>{val.tennhacungcap}</p>
+                            <p className="special">{val.tennhacungcap}</p>
                         </Form.Item>
                     </Col>
                     <Col span={12}>
                         <Form.Item wrapperCol={{ sm: 24 }} label="Email">
-                            <p>{val.emailncc}</p>
+                            <p className="special">{val.emailncc}</p>
                         </Form.Item>
                     </Col>
                     <Col span={12}>
                         <Form.Item wrapperCol={{ sm: 24 }} label="Số điện thoại">
-                            <p>{val.sdtncc}</p>
+                            <p className="special">{val.sdtncc}</p>
                         </Form.Item>
                     </Col>
                     <Col span={12}>
                         <Form.Item wrapperCol={{ sm: 24 }} label="Người đại diện">
-                            <p>{val.nguoidaidien}</p>
+                            <p className="special">{val.nguoidaidien}</p>
                         </Form.Item>
                     </Col>
                 </Row>
@@ -252,7 +242,7 @@ class danhsach extends Component {
                 <Title style={{ marginLeft: 30, color: '#002140', marginTop: 15 }} level={3}>Danh sách đơn mua hàng</Title>
 
                 <Row style={{ marginLeft: 30, marginRight: 30 }}>
-                    <Col span={8}>
+                    <Col span={12}>
                         <Search columns={this.state.columns} target="title" data={this.state.data} getSearchData={(e) => this.getSearchData(e)} />
                     </Col>
                 </Row>

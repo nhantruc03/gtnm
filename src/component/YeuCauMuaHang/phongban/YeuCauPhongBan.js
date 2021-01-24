@@ -6,6 +6,11 @@ import Search from '../../search';
 import Subtable from '../../subtable'
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { EditOutlined } from "@ant-design/icons";
+const columns = [
+    {
+        title: 'ID', dataIndex: 'ID', key: 'ID',
+        sorter: (a, b) => a.ID - b.ID,
 const formItemLayout = {
     labelCol: {
         span: 6,
@@ -239,7 +244,7 @@ class YeuCauPhongBan extends Component {
     render() {
         return (
             <Content style={{ margin: '0 16px' }}>
-                <Title style={{ marginLeft: 30, color: '#002140', marginTop: 15 }} level={3}>Yêu cầu phòng ban</Title>
+                <Title style={{ marginLeft: 30, color: '#002140', marginTop: 15 }} level={3}>Yêu cầu mua hàng</Title>
 
                 <Row style={{ marginLeft: 30, marginRight: 30 }}>
                     <Col span={12}>

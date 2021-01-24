@@ -1,4 +1,4 @@
-import { Button, Col, Row, Tag, Drawer, Badge } from 'antd';
+import { Button, Col, Row, Tag, Drawer, Badge, Card } from 'antd';
 import Avatar from 'antd/lib/avatar/avatar';
 import Title from 'antd/lib/typography/Title';
 import React, { Component } from 'react';
@@ -98,11 +98,11 @@ class ChaoGia_item extends Component {
 
     render() {
         return (
-            <Col xs={24} xl={12} span={12} style={{ padding: 50 }}>
-                <div style={{ width: '100%', borderRadius: '6px', backgroundColor: "white", padding: 30 }}>
+            <Col span={12} style={{ padding: 16 }}>
+                <Card hoverable={true} onClick={() => this.showDrawer()}>
                     <Row>
                         <Col span={14}>
-                            <Title>Cung cấp vải gấm</Title>
+                            <Title level={2}>Cung cấp vải gấm</Title>
                         </Col>
                         <Col span={10}>
                             <Tag style={{ textAlign: "center", maxWidth: 150, float: 'right', marginTop: '5%' }} className={`green`} key={`Đã phê duyệt`}>
@@ -122,7 +122,7 @@ class ChaoGia_item extends Component {
                             <Button onClick={() => this.showDrawer()} className="back" style={{ width: '100%', float: "right" }}>Xem chi tiết</Button>
                         </Col>
                     </Row>
-                </div>
+                </Card>
                 <Drawer
                     title="Thông tin nhà cung cấp"
                     placement="right"
@@ -138,7 +138,7 @@ class ChaoGia_item extends Component {
                     </div>
 
                     <div style={{ float: 'right', width: '50%' }}>
-                        <Button className="add" style={{ width: '100%' }} >Lưu</Button>
+                        <Button onClick={() => this.onClose()} className="add" style={{ width: '100%' }} >Lưu</Button>
                     </div>
                 </Drawer>
             </Col>

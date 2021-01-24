@@ -18,7 +18,7 @@ var data = [
         soluong: 1000,
         tags: ["Đã phê duyệt"],
         tennhacungcap: "123",
-        tensanpham: "Bút bi Thiên Long",
+        tensanpham: "Bút dạ lông Thiên Long",
         tieude: "Văn phòng phẩm",
         tinhtrang: 2,
         tongtien: 10000000,

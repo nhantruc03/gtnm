@@ -9,6 +9,11 @@ import { Link } from 'react-router-dom';
 const formItemLayout = {
     labelCol: {
         span: 6,
+import { EditOutlined } from "@ant-design/icons";
+const columns = [
+    {
+        title: 'ID', dataIndex: 'ID', key: 'ID',
+        sorter: (a, b) => a.ID - b.ID,
     },
     wrapperCol: {
         span: 14,
@@ -247,7 +252,7 @@ class danhsach extends Component {
                     </Col>
                 </Row>
 
-                <div className="site-layout-background" style={{ padding: 24, margin: 30, marginTop: 10, minHeight: 360, borderRadius: '10px', boxShadow: 'inherit' }}>
+                <div className="site-layout-background" style={{ padding: 24, margin: 30, marginTop: 10, minHeight: 360, borderRadius: '10px'}}>
                     <Table
                         expandRowByClick={true}
                         expand

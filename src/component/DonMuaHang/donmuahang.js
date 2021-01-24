@@ -125,10 +125,9 @@ class donmuahang extends Component {
                         layout="vertical"
                         validateMessages={validateMessages}
                     >
-
                         <Row>
                             <Col span={24}>
-                                <Title>Thông tin đơn hàng</Title>
+                                <Title level={4}>Thông tin đơn hàng</Title>
                             </Col>
                             <Col span={5}>
                                 <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Mã đơn hàng" required>
@@ -195,8 +194,9 @@ class donmuahang extends Component {
                                     </Form.Item>
                                 </Form.Item>
                             </Col>
+                        
                             <Col span={24}>
-                                <Title>Thông tin nhà cung cấp</Title>
+                                <Title level={4}>Thông tin nhà cung cấp </Title>
                             </Col>
                             <Col span={12}>
                                 <Form.Item wrapperCol={{ sm: 24 }} style={{ width: "90%" }} label="Tên nhà cung cấp" required>

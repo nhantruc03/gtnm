@@ -187,15 +187,15 @@ class lich extends Component {
     }
 
     render() {
-        const temp = `< Lịch`
+        const temp = `Lịch`
         return (
             <Content>
 
-                <Row style={{ marginTop: 5, marginLeft: 30, marginRight: 30 }}>
+                <Row style={{ marginTop: 16, marginLeft: 30, marginRight: 30 }}> 
                     <Col span={8}>
-                        <Title style={{ color: '#002140' }} level={3}><a style={{ color: '#002140' }} onClick={this.goBack} href="/#">{temp}</a></Title>
+                        <Title  level={3}><a style={{ color: '#002B6D' }} onClick={this.goBack} href="/#">{temp}</a></Title>
                     </Col>
-                </Row>
+                </Row>     
 
                 <div className="site-layout-background" style={{ padding: 24, margin: 30, marginTop: 1, minHeight: 360, borderRadius: '10px' }}>
                     <Calendar dateCellRender={this.dateCellRender} monthCellRender={this.monthCellRender} />

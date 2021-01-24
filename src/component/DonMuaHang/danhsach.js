@@ -6,6 +6,7 @@ import Search from '../search';
 import Subtable from '../subtable'
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { EditOutlined } from "@ant-design/icons";
 const formItemLayout = {
     labelCol: {
         span: 6,

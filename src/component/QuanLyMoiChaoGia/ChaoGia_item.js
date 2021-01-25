@@ -128,11 +128,11 @@ class ChaoGia_item extends Component {
 
   render() {
     return (
-      <Col span={12} style={{ padding: 16 }}>
+      <Col xl={12} xs={24} span={12} style={{ padding: 16, paddingRight: 60, paddingLeft: 60 }}>
         <Card
           hoverable={true}
           onClick={() => this.showDrawer()}
-          style={{ maxWidth: "500px" }}
+        // style={{ maxWidth: "500px" }}
         >
           <Row>
             <Col span={14}>
@@ -170,7 +170,7 @@ class ChaoGia_item extends Component {
               </Button>
             </Col>
           </Row>
-          <Divider dashed></Divider>
+          <Divider style={{ marginTop: 10 }} dashed></Divider>
           <Row gutter={[16, -10]} style={{ marginTop: "20px" }}>
             <Col>
               <p style={{ color: "black", marginBottom: "0" }}>

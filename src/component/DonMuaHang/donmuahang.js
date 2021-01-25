@@ -68,13 +68,13 @@ class donmuahang extends Component {
     }
 
     componentDidMount() {
-        var temp = this.props.data.find(e => Number(e.ID) === Number(this.props.match.params.id))
-        console.log(temp)
-        var temp_date = temp.ngaynhanhang
-        temp.ngaynhanhang_O = moment(temp_date)
-        console.log(temp)
+        var temp = this.props.data.find(e => Number(e.ID) === Number(this.props.match.params.id));
+
+        var temp_date = temp.ngaynhanhang;
+        temp.ngaynhanhang_O = moment(temp_date,"YYYY-MM-DD");
+        
         this.setState({
-            data: temp
+            data: temp,
         })
         this.formRef.current.setFieldsValue(temp)
     }
@@ -94,7 +94,6 @@ class donmuahang extends Component {
         values.tinhtrang = 0
         values.chitiet = `${values.soluong} ${values.donvitinh}`
         values.tags = ['Đang đợi phê duyệt']
-
 
         console.log('Received values of form: ', values);
 
@@ -120,7 +119,6 @@ class donmuahang extends Component {
                     <Form ref={this.formRef}
                         name="validate_other"
                         {...formItemLayout}
-                        
                         onFinish={(e) => this.onFinish(e)}
                         layout="vertical"
                         validateMessages={validateMessages}

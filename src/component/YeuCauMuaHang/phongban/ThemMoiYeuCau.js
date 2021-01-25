@@ -11,7 +11,6 @@ import {
   Input,
   DatePicker,
   message,
-  Divider,
 } from "antd";
 import {
   InboxOutlined,
@@ -69,7 +68,7 @@ class ThemMoiYeuCau extends Component {
       values.ngaynhanhang.toString()
     ).toLocaleDateString();
 
-    var ngaytao = new Date(values.ngaytao.toString()).toLocaleDateString();
+    var ngaytao = new Date().toLocaleDateString();
     values.ngaynhanhang = ngaynhanhang;
     values.ngaytao = ngaytao;
 
@@ -128,6 +127,26 @@ class ThemMoiYeuCau extends Component {
             validateMessages={validateMessages}
           >
             <Row>
+              <Col span={24}>
+                <Title level={4}>Tiêu đề</Title>
+              </Col>
+              <Col span={24}>
+                <Form.Item
+                  wrapperCol={{ sm: 24 }}
+                  style={{ width: "90%" }}
+                  label="Tiêu đề"
+                  required
+                >
+                  <Form.Item
+                    name="tieude"
+                    noStyle
+                    label="Tiêu đề"
+                    rules={[{ required: true }]}
+                  >
+                    <Input placeholder="Eg.Tiêu đề" />
+                  </Form.Item>
+                </Form.Item>
+              </Col>
               <Col span={24}>
                 <Title level={4}>Thông tin khách hàng</Title>
               </Col>
@@ -330,212 +349,6 @@ class ThemMoiYeuCau extends Component {
                   </Form.Item>
                 </Form.Item>
               </Col>
-
-              {/* <Col span={24}>
-                <Title style={{color:"002B6D"}} level={4}>Thông tin khách hàng</Title>
-                </Col>
-              <Col span={12}>
-                <Form.Item
-                  wrapperCol={{ sm: 24 }}
-                  style={{ width: "90%" }}
-                  label="Tên người đại diện"
-                  required
-                >
-                  <Form.Item
-                    name="tennguoidaidien"
-                    label="Tên người đại diện"
-                    rules={[{ required: true }]}
-                    noStyle
-                  >
-                    <Input placeholder="Eg.Tên người đại diện" />
-                  </Form.Item>
-                </Form.Item>
-                <Form.Item
-                  wrapperCol={{ sm: 24 }}
-                  style={{ width: "90%" }}
-                  label="Tên doanh nghiệp"
-                  required
-                >
-                  <Form.Item
-                    name="tendoanhnghiep"
-                    noStyle
-                    label="Tên doanh nghiệp"
-                    rules={[{ required: true }]}
-                  >
-                    <Input placeholder="Eg.Tên doanh nghiệp" />
-                  </Form.Item>
-                </Form.Item>
-                <Form.Item
-                  wrapperCol={{ sm: 24 }}
-                  style={{ width: "90%" }}
-                  label="Email"
-                  required
-                >
-                  <Form.Item
-                    name="email"
-                    noStyle
-                    label="Email"
-                    rules={[{ required: true, type: "email" }]}
-                  >
-                    <Input placeholder="Eg.example@gmail.com" />
-                  </Form.Item>
-                </Form.Item>
-                <Form.Item
-                  wrapperCol={{ sm: 24 }}
-                  style={{ width: "90%" }}
-                  label="SĐT"
-                  required
-                >
-                  <Form.Item
-                    name="sdt"
-                    noStyle
-                    label="SĐT"
-                    rules={[{ required: true, type: "number" }]}
-                  >
-                    <InputNumber
-                      style={{ width: "100%" }}
-                      placeholder="Eg.0919..."
-                    />
-                  </Form.Item>
-                </Form.Item>
-                <Form.Item
-                  wrapperCol={{ sm: 24 }}
-                  style={{ width: "90%" }}
-                  label="Số lượng"
-                  required
-                >
-                  <Form.Item
-                    name="soluong"
-                    noStyle
-                    label="Số lượng"
-                    rules={[{ required: true, type: "number" }]}
-                  >
-                    <InputNumber
-                      style={{ width: "50%" }}
-                      placeholder="Eg.100"
-                    />
-                  </Form.Item>
-                </Form.Item>
-                <Form.Item
-                  wrapperCol={{ sm: 24 }}
-                  style={{ width: "90%" }}
-                  label="Đơn vị tính"
-                  required
-                >
-                  <Form.Item
-                    name="donvitinh"
-                    noStyle
-                    label="Đơn vị tính"
-                    rules={[{ required: true }]}
-                  >
-                    <Input placeholder="Eg.cái" />
-                  </Form.Item>
-                </Form.Item>
-              </Col>
-              <Col span={12}>
-                <Row>
-                  <Col span={12}>
-                    <Form.Item wrapperCol={{ sm: 22 }} label="Tiêu đề" required>
-                      <Form.Item
-                        name="tieude"
-                        noStyle
-                        label="Tiêu đề"
-                        rules={[{ required: true }]}
-                      >
-                        <Input placeholder="Eg.cái" />
-                      </Form.Item>
-                    </Form.Item>
-                  </Col>
-                  <Col span={12}>
-                    <Form.Item
-                      wrapperCol={{ sm: 19 }}
-                      label="Ngày tạo"
-                      required
-                    >
-                      <Form.Item name="ngaytao" noStyle>
-                        <DatePicker placeholder="Chọn ngày" />
-                      </Form.Item>
-                    </Form.Item>
-                  </Col>
-                </Row>
-
-                <Form.Item
-                  wrapperCol={{ sm: 24 }}
-                  style={{ width: "90%" }}
-                  label="Mô tả yêu cầu"
-                  required
-                >
-                  <Form.Item
-                    name="motayeucau"
-                    noStyle
-                    label="Mô tả yêu cầu"
-                    rules={[{ required: true }]}
-                  >
-                    <Input.TextArea rows={6} placeholder="Eg.mô tả yêu cầu" />
-                  </Form.Item>
-                </Form.Item>
-
-                <Row>
-                  <Col span={12}>
-                    <Form.Item
-                      wrapperCol={{ sm: 22 }}
-                      style={{ width: "100%" }}
-                      label="Tên sản phẩm"
-                      required
-                    >
-                      <Form.Item
-                        name="tensanpham"
-                        noStyle
-                        label="Tên sản phẩm"
-                        rules={[{ required: true }]}
-                      >
-                        <Input placeholder="Eg.Tên sản phẩm" />
-                      </Form.Item>
-                    </Form.Item>
-                  </Col>
-                  <Col span={12}>
-                    <Form.Item
-                      wrapperCol={{ sm: 19 }}
-                      style={{ width: "100%" }}
-                      label="Ngày nhận hàng"
-                      required
-                    >
-                      <Form.Item name="ngaynhanhang" noStyle>
-                        <DatePicker placeholder="Chọn ngày" />
-                      </Form.Item>
-                    </Form.Item>
-                  </Col>
-                </Row>
-
-                <Form.Item
-                  wrapperCol={{ sm: 24 }}
-                  style={{ width: "90%" }}
-                  label="Đơn đặt hàng liên quan"
-                >
-                  <Form.Item
-                    name="dragger"
-                    valuePropName="fileList"
-                    getValueFromEvent={normFile}
-                    noStyle
-                  >
-                    <Upload.Dragger
-                      style={{ width: "100%" }}
-                      name="files"
-                      action="/upload.do"
-                    >
-                      <p className="ant-upload-text">
-                        Thả tệp vào đây hoặc chọn từ trình duyệt
-                      </p>
-                      <p className="ant-upload-hint">
-                        VD: pdf, docs, exls, ...
-                      </p>
-                      <p className="ant-upload-drag-icon">
-                        <InboxOutlined />
-                      </p>
-                    </Upload.Dragger>
-                  </Form.Item>
-                </Form.Item>
-              </Col> */}
             </Row>
             <Form.Item wrapperCol={{ span: 24, offset: 9 }}>
               <Button

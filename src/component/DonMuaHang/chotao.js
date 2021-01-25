@@ -6,7 +6,6 @@ import Search from "../search";
 import Subtable from "../subtable";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { FormOutlined } from "@ant-design/icons";
 
 const formItemLayout = {
   labelCol: {
@@ -200,6 +199,16 @@ class chotao extends Component {
       >
         <Row>
           <Col span={24}>
+            <Title>Tiêu đề</Title>
+          </Col>
+          <Form.Item
+            wrapperCol={{ sm: 24 }}
+            style={{ width: "100%" }}
+            label="Tiêu đề"
+          >
+            <p className="special">{val.tieude}</p>
+          </Form.Item>
+          <Col span={24}>
             <Title>Thông tin khách hàng</Title>
           </Col>
           <Col span={12}>
@@ -316,7 +325,7 @@ class chotao extends Component {
           visible={this.state.modal2Visible}
           onOk={() => this.setModal2Visible(false)}
           onCancel={() => this.setModal2Visible(false)}
-          width="50%"
+          width="30%"
           footer={false}
         >
           {this.renderModel(this.state.model)}

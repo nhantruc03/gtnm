@@ -99,7 +99,7 @@ class header extends Component {
                     </Col>
                     <Col span={12}>
                         <Form.Item wrapperCol={{ sm: 24 }} label="Thành tiền" >
-                            <p className="special">{val.thanhtien}</p>
+                            <p className="special">{val.tongtien}</p>
                         </Form.Item>
                     </Col>
                     <Col span={12}>
@@ -159,7 +159,7 @@ class header extends Component {
                     visible={this.state.modal2Visible}
                     onOk={() => this.setModal2Visible(false)}
                     onCancel={() => this.setModal2Visible(false)}
-                    width='50%'
+                    width='30%'
                     footer={false}
                 >
                     {this.renderModel(this.state.model)}

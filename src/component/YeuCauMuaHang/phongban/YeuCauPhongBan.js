@@ -6,7 +6,6 @@ import Search from "../../search";
 import Subtable from "../../subtable";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { EditOutlined } from "@ant-design/icons";
 
 const formItemLayout = {
   labelCol: {
@@ -98,9 +97,9 @@ class YeuCauPhongBan extends Component {
               >
                 <img src="./View.png" alt="" />
               </a>
-              <Link to={`/donmuahang/${ID.ID}`} style={{ paddingLeft: "5px" }}>
+              {/* <Link to={`/donmuahang/${ID.ID}`} style={{ paddingLeft: "5px" }}>
                 <img src="./edit.svg" alt="" />
-              </Link>
+              </Link> */}
             </div>
           ),
         },
@@ -193,6 +192,16 @@ class YeuCauPhongBan extends Component {
         defaultValue={val}
       >
         <Row>
+          <Col span={24}>
+            <Title>Tiêu đề</Title>
+          </Col>
+          <Form.Item
+            wrapperCol={{ sm: 24 }}
+            style={{ width: "100%" }}
+            label="Tiêu đề"
+          >
+            <p className="special">{val.tieude}</p>
+          </Form.Item>
           <Col span={24}>
             <Title>Thông tin khách hàng</Title>
           </Col>
@@ -349,7 +358,7 @@ class YeuCauPhongBan extends Component {
               rowExpandable: (record) => record.name !== "Not Expandable",
             }}
             dataSource={this.state.SearchData}
-            // setModal2Visible ={(a,b)=>this.setModal2Visible(a,b)}
+          // setModal2Visible ={(a,b)=>this.setModal2Visible(a,b)}
           />
         </div>
 

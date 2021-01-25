@@ -1,4 +1,4 @@
-import { Col, Row, Badge, Card, Tag, Button, Drawer} from 'antd';
+import { Col, Row, Badge} from 'antd';
 import { Content } from 'antd/lib/layout/layout';
 import Title from 'antd/lib/typography/Title';
 import React, { Component } from 'react';
@@ -101,7 +101,7 @@ class QuanLyMoiChaoGia extends Component {
         return (
             <Content style={{ margin: '0 16px' }} >
                 <Row style={{ marginTop: 16, marginLeft: 16, marginRight: 30 }}>
-                    <Col span={8} wrapperCol={{ sm: 24 }}>
+                    <Col span={8}>
                         <Title style={{ color: '#002140' }} level={3}>MỜI CHÀO GIÁ</Title>
                     </Col>
                 </Row>

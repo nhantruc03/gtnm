@@ -1,376 +1,378 @@
-@import '~antd/dist/antd.css';
+@import "~antd/dist/antd.css";
 .App {
-    text-align: center;
+  text-align: center;
 }
 
 .App-logo {
-    height: 40vmin;
-    pointer-events: none;
+  height: 40vmin;
+  pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 }
 
 .App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
 .App-link {
-    color: #61dafb;
+  color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
-
 
 /* ant */
 
 #components-layout-demo-side .logo {
-    height: 32px;
-    margin: 16px;
-    background: rgba(255, 255, 255, 0.3);
+  height: 32px;
+  margin: 16px;
+  background: rgba(255, 255, 255, 0.3);
 }
-
-
 
 .site-layout .site-layout-background {
-    background: #fff;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.06);;
-    
+  background: #fff;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.06);
 }
 
-.ant-table-thead.tr.th{
-    background: #F1F7FF;
+.ant-table-thead.tr.th {
+  background: #f1f7ff;
 }
 
-.ant-divider-horizontal{
-    margin:0 0;
+.ant-divider-horizontal {
+  margin: 0 0;
 }
 
-.ant-layout-header{
-    background: #FFFF;
+.ant-layout-header {
+  background: #ffff;
 }
 
-.ant-input-group>.ant-input:first-child,
+.ant-input-group > .ant-input:first-child,
 .ant-input-group-addon:first-child {
-    border-top-left-radius: 6px;
-    border-bottom-left-radius: 6px;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
 }
 
-.ant-input-search>.ant-input-group>.ant-input-group-addon:last-child .ant-input-search-button {
-    border-top-right-radius: 6px;
-    border-bottom-right-radius: 6px;
+.ant-input-search
+  > .ant-input-group
+  > .ant-input-group-addon:last-child
+  .ant-input-search-button {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
 
 button.ant-btn.add {
-    border-radius: 6px;
-    background-color: #002B6D;
-    color: white;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 140%;
-    /* or 22px */
-    height: 40px;
-    text-align: center;
+  border-radius: 6px;
+  background-color: #002b6d;
+  color: white;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 140%;
+  /* or 22px */
+  height: 40px;
+  text-align: center;
 }
 
 button.ant-btn.back {
-    border-radius: 6px;
-    background-color: #fff;
-    color: #114EAB;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 140%;
-    /* or 22px */
-    border: 1px solid #002B6D;
-    height: 40px;
-    text-align: center;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #114eab;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 140%;
+  /* or 22px */
+  border: 1px solid #002b6d;
+  height: 40px;
+  text-align: center;
 }
 
 h4.ant-typography {
-    font-family: Open Sans;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 140%;
-    text-transform: none;
-    color: #002B6D !important;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 140%;
+  text-transform: none;
+  color: #002b6d !important;
 }
 
 h3.ant-typography {
-    font-family: Open Sans;
-    font-style: normal;
-    font-weight: 600px;
-    font-size: 20px;
-    line-height: 140%;
-    text-transform: uppercase;
-    color: #002B6D !important;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600px;
+  font-size: 20px;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: #002b6d !important;
 }
 
 h3.ant-typography.logo {
-    color: white !important;
+  color: white !important;
 }
 
-.ant-card{
-    border-radius: 6px;
-    box-shadow:  0px 4px 15px rgba(20, 82, 178, 0.07);
+.ant-card {
+  border-radius: 6px;
+  box-shadow: 0px 4px 15px rgba(20, 82, 178, 0.07);
 }
 
 span.ant-tag {
-    font-family: Open Sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
-    text-align: center;
-    line-height: 140%;
-    border-radius: 16px;
-    border: 0px;
-    padding: 5px 5px 5px 5px;
-    width: 100%;
-    text-transform: none;
-    white-space: break-spaces;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  text-align: center;
+  line-height: 140%;
+  border-radius: 16px;
+  border: 0px;
+  padding: 5px 5px 5px 5px;
+  width: 100%;
+  text-transform: none;
+  white-space: break-spaces;
 }
 
 span.ant-tag.yellow {
-    color: #765F01;
-    background: #FFF3C4;
+  color: #765f01;
+  background: #fff3c4;
 }
 
 span.ant-tag.green {
-    background: #B2F1BD;
-    color: #12541D;
+  background: #b2f1bd;
+  color: #12541d;
 }
 
 span.ant-tag.red {
-    background: #FFDFDD;
-    color: #8E0800;
+  background: #ffdfdd;
+  color: #8e0800;
 }
 
 span.ant-tag.purple {
-    background: #DAD7FE;
+  background: #dad7fe;
 }
 
 span.ant-tag.skin {
-    background: #FFE5D3;
+  background: #ffe5d3;
 }
 
 span.ant-tag.tea {
-    background: #E2FBD7;
+  background: #e2fbd7;
 }
 
 input.ant-input {
-    height: 40px;
-    border-radius: 6px;
+  height: 40px;
+  border-radius: 6px;
 }
 
 .ant-input-number {
-    border-radius: 6px;
-    height: 40px;
+  border-radius: 6px;
+  height: 40px;
 }
 
 textarea.ant-input {
-    border-radius: 6px;
+  border-radius: 6px;
 }
 
 .ant-upload.ant-upload-drag {
-    border-radius: 6px !important;
+  border-radius: 6px !important;
 }
 
 button.ant-btn.ant-btn-icon-only.ant-input-search-button {
-    height: 40px;
+  height: 40px;
 }
 
-
-
 th.ant-table-cell {
-    text-align: center !important;
-    max-width: max-content !important;
-    background-color: #F1F7FF;
+  text-align: center !important;
+  max-width: max-content !important;
+  background-color: #f1f7ff;
 }
 
 td.ant-table-cell {
-    text-align: center !important;
-    max-width: max-content!important;
-
+  text-align: center !important;
+  max-width: max-content !important;
 }
 
 .invisible {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 td.ant-table-cell.sub {
-    vertical-align: baseline;
+  vertical-align: baseline;
 }
 
 .ant-table.sub-table {
-    background: none;
+  background: none;
 }
 
+.ant-form-vertical .ant-form-item-label,
+.ant-col-24.ant-form-item-label,
+.ant-col-xl-24.ant-form-item-label {
+  padding: 0 0 4px;
+}
 .ant-col.ant-col-6.ant-form-item-label {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 .ant-upload.ant-upload-drag .ant-upload {
-    padding: 5px 0;
+  padding: 5px 0;
 }
 
 .ant-picker {
-    width: 100%;
-    height: 40px;
-    border-radius: 6px;
+  width: 100%;
+  height: 40px;
+  border-radius: 6px;
 }
 
 label.ant-form-item-required {
-    font-family: Open Sans;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 140%;
-    color: #333333;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 140%;
+  color: #333333;
 }
 
 label {
-    font-family: Open Sans !important;
-    font-style: normal !important;
-    font-weight: 500 !important;
-    font-size: 14px !important;
-    line-height: 140% !important;
-    color: #333333 !important;
+  font-family: Open Sans !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  line-height: 140% !important;
+  color: #333333 !important;
 }
 
 .ant-picker-content {
-    table-layout: auto !important;
+  table-layout: auto !important;
 }
 
 ul.events {
-    overflow-x: hidden;
-    margin-right: 30px;
+  overflow-x: hidden;
+  margin-right: 30px;
 }
 
 .ant-picker-cell-inner.ant-picker-calendar-date {
-    max-width: 500px;
+  max-width: 500px;
 }
 
 .ant-menu-dark .ant-menu-inline.ant-menu-sub {
-    background: #184A97;
+  background: #184a97;
 }
 
 .site-drawer-render-in-current-wrapper {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
 .dropdown {
-    max-height: 450px;
-    overflow-y: scroll;
+  max-height: 450px;
+  overflow-y: scroll;
 }
 .ant-modal-content {
-    border-radius: 10px;
+  border-radius: 10px;
 }
 .ant-modal-header {
-    border-radius: 10px 10px 0 0;
+  border-radius: 10px 10px 0 0;
 }
 .css-yk16xz-control {
-    height: 40px;
-    border-radius: 6px;
+  height: 40px;
+  border-radius: 6px;
 }
 label {
-    color: #555555!important;
-    font-family: Open Sans !important;
-    font-style: normal !important;
-    font-weight: normal !important;
-    font-size: 20px !important;
-    line-height: 140% !important;
+  color: #6e6e6e !important;
+  font-family: Open Sans !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-size: 14px !important;
+  line-height: 140% !important;
 }
 
-p.special{
-    font-family: Open Sans !important;
-    font-style: normal !important;
-    font-weight: normal !important;
-    font-size: 20px !important;
-    line-height: 140% !important;
+p.special {
+  font-family: Open Sans !important;
+  color: #000000 !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-size: 14px !important;
+  line-height: 140% !important;
 }
-input[type='radio']:checked:after {
-    width: 15px;
-    height: 15px;
-    border-radius: 15px;
-    top: -7px;
-    left: -1px;
-    position: relative;
-    background-color: #184A97;
-    content: '';
-    display: inline-block;
-    visibility: visible;
-    border: 2px solid white;
+input[type="radio"]:checked:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -7px;
+  left: -1px;
+  position: relative;
+  background-color: #184a97;
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
 }
-h1.ant-typography, .ant-modal-title {
-    color: #002B6D !important;
-    font-family: Open Sans !important;
-    font-style: normal !important;
-    font-weight: 600 !important;
-    font-size: 25px !important;
-    line-height: 140% !important;
+h1.ant-typography,
+.ant-modal-title {
+  color: #002b6d !important;
+  font-family: Open Sans !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  line-height: 140% !important;
 }
 p.ncc_label {
-    font-family: Open Sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 10px;
-    color: #828282;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 10px;
+  color: #828282;
 }
 
-span.ncc_content{
-    font-family: Open Sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 13px;
-    line-height: 100%;
-    color: black;
+span.ncc_content {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 100%;
+  color: black;
 }
 
-.title{
-    font-family: Open Sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 20px;
-    line-height: 140%;
-/* identical to box height, or 28px */
+.title {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 140%;
+  /* identical to box height, or 28px */
 
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .ant-drawer-title {
-    font-family: Open Sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 20px;
-    line-height: 140%;
-/* identical to box height, or 28px */
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 140%;
+  /* identical to box height, or 28px */
 
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 h1.ant-typography {
-    font-size: 35px;
+  font-size: 35px;
 }
-

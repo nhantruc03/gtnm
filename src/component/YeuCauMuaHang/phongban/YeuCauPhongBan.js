@@ -199,7 +199,7 @@ class YeuCauPhongBan extends Component {
           <Col span={12}>
             <Form.Item
               wrapperCol={{ sm: 24 }}
-              style={{ width: "90%" }}
+              style={{ width: "100%" }}
               label="Tên người đại diện"
             >
               <p className="special">{val.tennguoidaidien}</p>
@@ -208,7 +208,7 @@ class YeuCauPhongBan extends Component {
           <Col span={12}>
             <Form.Item
               wrapperCol={{ sm: 24 }}
-              style={{ width: "90%" }}
+              style={{ width: "100%" }}
               label="Tên doanh nghiệp"
             >
               <p className="special">{val.tendoanhnghiep}</p>
@@ -217,7 +217,7 @@ class YeuCauPhongBan extends Component {
           <Col span={12}>
             <Form.Item
               wrapperCol={{ sm: 24 }}
-              style={{ width: "90%" }}
+              style={{ width: "100%" }}
               label="Email"
             >
               <p className="special">{val.email}</p>
@@ -227,7 +227,7 @@ class YeuCauPhongBan extends Component {
           <Col span={12}>
             <Form.Item
               wrapperCol={{ sm: 24 }}
-              style={{ width: "90%" }}
+              style={{ width: "100%" }}
               label="Số điện thoại"
             >
               <p className="special">{val.sdt}</p>
@@ -240,7 +240,7 @@ class YeuCauPhongBan extends Component {
           <Col span={12}>
             <Form.Item
               wrapperCol={{ sm: 24 }}
-              style={{ width: "90%" }}
+              style={{ width: "100%" }}
               label="Tên sản phẩm"
             >
               <p className="special">{val.tensanpham}</p>
@@ -249,7 +249,7 @@ class YeuCauPhongBan extends Component {
           <Col span={12}>
             <Form.Item
               wrapperCol={{ sm: 24 }}
-              style={{ width: "90%" }}
+              style={{ width: "100%" }}
               label="Ngày nhận hàng"
             >
               <p className="special">{val.ngaynhanhang}</p>
@@ -258,7 +258,7 @@ class YeuCauPhongBan extends Component {
           <Col span={12}>
             <Form.Item
               wrapperCol={{ sm: 24 }}
-              style={{ width: "90%" }}
+              style={{ width: "100%" }}
               label="Số lượng"
             >
               <p className="special">{val.soluong}</p>
@@ -267,7 +267,7 @@ class YeuCauPhongBan extends Component {
           <Col span={12}>
             <Form.Item
               wrapperCol={{ sm: 24 }}
-              style={{ width: "90%" }}
+              style={{ width: "100%" }}
               label="Đơn vị tính"
             >
               <p className="special">{val.donvitinh}</p>
@@ -276,7 +276,7 @@ class YeuCauPhongBan extends Component {
           <Col span={12}>
             <Form.Item
               wrapperCol={{ sm: 24 }}
-              style={{ width: "90%" }}
+              style={{ width: "100%" }}
               label="Ghi chú"
             >
               <p className="special">{val.ghichu}</p>
@@ -285,7 +285,7 @@ class YeuCauPhongBan extends Component {
           <Col span={12}>
             <Form.Item
               wrapperCol={{ sm: 24 }}
-              style={{ width: "90%" }}
+              style={{ width: "100%" }}
               label="Đơn đặt hàng"
             >
               <ul>
@@ -359,7 +359,7 @@ class YeuCauPhongBan extends Component {
           visible={this.state.modal2Visible}
           onOk={() => this.setModal2Visible(false)}
           onCancel={() => this.setModal2Visible(false)}
-          width="50%"
+          width="30%"
           footer={false}
         >
           {this.renderModel(this.state.model)}

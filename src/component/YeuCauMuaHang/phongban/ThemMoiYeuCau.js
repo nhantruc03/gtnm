@@ -197,7 +197,7 @@ class ThemMoiYeuCau extends Component {
                     name="email"
                     noStyle
                     label="Email"
-                    rules={[{ required: true }]}
+                    rules={[{ required: true, type: 'email' }]}
                   >
                     <Input placeholder="Eg.100" />
                   </Form.Item>
@@ -350,6 +350,7 @@ class ThemMoiYeuCau extends Component {
                 </Form.Item>
               </Col>
             </Row>
+            <br></br>
             <Form.Item wrapperCol={{ span: 24, offset: 9 }}>
               <Button
                 onClick={this.goBack}

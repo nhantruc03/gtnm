@@ -225,6 +225,7 @@ class donmuahang extends Component {
                                 </Form.Item>
                             </Col>
                         </Row>
+                        <br></br>
                         <Form.Item wrapperCol={{ span: 24, offset: 9 }}>
                             <Button onClick={this.goBack} className="back" style={{ width: 150, marginRight: 20 }}>Hủy</Button>
                             <Button htmlType="submit" className="add" style={{ width: 150 }}>Lưu</Button>

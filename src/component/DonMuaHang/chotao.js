@@ -74,7 +74,7 @@ class chotao extends Component {
                 }
                 return (
                   <Tag className={`${color}`} key={tag}>
-                    {tag.toUpperCase()}
+                    {tag}
                   </Tag>
                 );
               })}
@@ -134,7 +134,7 @@ class chotao extends Component {
                 }
                 return (
                   <Tag className={`${color}`} key={tag}>
-                    {tag.toUpperCase()}
+                    {tag}
                   </Tag>
                 );
               })}

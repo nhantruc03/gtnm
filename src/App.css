@@ -216,7 +216,6 @@ td.ant-table-cell {
 
 td.ant-table-cell.sub {
   vertical-align: baseline;
-
 }
 
 .ant-table.sub-table {
@@ -250,7 +249,9 @@ label.ant-form-item-required {
   line-height: 140%;
   color: #333333;
 }
-
+.ant-form-item {
+  margin-bottom: 0 !important;
+}
 label {
   font-family: Open Sans !important;
   font-style: normal !important;

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Form, Button, Table, Tag, Row, Col, Modal } from "antd";
+import { Form, Button, Table, Tag, Row, Col, Modal, Tooltip } from "antd";
 import { Content } from "antd/lib/layout/layout";
 import Title from "antd/lib/typography/Title";
 import Search from "../../search";
@@ -75,7 +75,7 @@ class YeuCauPhongBan extends Component {
                 }
                 return (
                   <Tag className={`${color}`} key={tag}>
-                    {tag.toUpperCase()}
+                    {tag}
                   </Tag>
                 );
               })}
@@ -131,7 +131,7 @@ class YeuCauPhongBan extends Component {
                 }
                 return (
                   <Tag className={`${color}`} key={tag}>
-                    {tag.toUpperCase()}
+                    {tag}
                   </Tag>
                 );
               })}
@@ -143,9 +143,11 @@ class YeuCauPhongBan extends Component {
           dataIndex: "",
           key: "x",
           render: () => (
-            <a href="/#">
-              <img src="./edit.svg" alt="" />
-            </a>
+            <Tooltip title="Xem chi tiết">
+              <a href="/#">
+                <img src="./edit.svg" alt="" />
+              </a>
+            </Tooltip>
           ),
         },
       ],
@@ -351,6 +353,11 @@ class YeuCauPhongBan extends Component {
             onChange={this.handleChange}
             expandRowByClick={true}
             columns={this.state.columns}
+            pagination={{
+              defaultPageSize: 5,
+              showSizeChanger: true,
+              pageSizeOptions: ["10", "20", "30"],
+            }}
             expandable={{
               expandedRowRender: (record) => (
                 <Subtable columns={this.state.sub_columns} data={record} />
@@ -358,7 +365,7 @@ class YeuCauPhongBan extends Component {
               rowExpandable: (record) => record.name !== "Not Expandable",
             }}
             dataSource={this.state.SearchData}
-          // setModal2Visible ={(a,b)=>this.setModal2Visible(a,b)}
+            // setModal2Visible ={(a,b)=>this.setModal2Visible(a,b)}
           />
         </div>
 
